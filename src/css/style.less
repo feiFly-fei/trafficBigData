@@ -27,6 +27,41 @@ a { text-decoration: none; }
     margin-bottom: 30px;
 }
 
+::-webkit-scrollbar
+{
+    width: 8px;
+    height: 8px;
+    background-color: #555;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #555;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #76b7fa;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.border-radius-half{
+    -moz-border-radius:  50% ;
+    -webkit-border-radius:  50%;
+    border-radius: 50%;
+}
+
 .nav-top{
     width: 100%;
     padding: 15px;
@@ -199,10 +234,8 @@ a { text-decoration: none; }
             bottom: -5px;
             right: -5px;
             border: 1px solid #00bbff;
-            -moz-border-radius:  50% ;
-            -webkit-border-radius:  50%;
-            border-radius: 50%;
             background: @bg-body-color;
+            .border-radius-half;
         }
 
         .horizontal-line{
@@ -229,6 +262,125 @@ a { text-decoration: none; }
             border: none;
             &:after{
                 display: none;
+            }
+        }
+
+        .timeline-box{
+            height: 275.6px;
+            overflow-y: auto;
+
+            &.big{
+                height: 330px;
+            }
+
+            .time-line{
+                line-height: 45px;
+                font-size: 0;
+                
+                span.province{
+                    color: #fde906;
+                    font-size: 14px;
+                    display: inline-block;
+                    width: 45px;
+                    vertical-align: middle;
+                    .overflow-hidden;
+                }
+
+                i.circle{
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    .border-radius-half;
+                    position: relative;
+                    background-color: #76b7fa;
+                    vertical-align: middle;
+                    margin-right: 15px;
+
+                    &:before{
+                        content: "";
+                        display: block;
+                        width: 18px;
+                        height: 18px;
+                        position: absolute;
+                        top: -4px;
+                        left: -4px;
+                        border-radius: 50%;
+                        background: #76b7fa;
+                        opacity: 0.4;
+                    }
+
+                    &:after{
+                        content: "";
+                        display: block;
+                        width: 0;
+                        height: 28px;
+                        border-left: 1px dashed #76b7fa;
+                        position: absolute;
+                        left: 5px;
+                        top: 14px;
+                    }
+                }
+
+                &:last-child i.circle:after{
+                    height: 0;
+                }
+
+                span.tag,
+                span.type{
+                    font-size: 12px;
+                    color: #76b7fa;
+                    width: 55px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    .overflow-hidden;
+                }
+
+                span.type{
+                    width: 70px;
+                }
+
+                a{
+                    color: #fff;
+                    font-size: 14px;
+                    display: inline-block;
+                    width: calc(~"100% - 200px");
+                    vertical-align: middle;
+                    .overflow-hidden;
+                }
+                
+                span.time{
+                    display: inline-block;
+                    width: 60px;
+                    font-size: 14px;
+                    color: #66ffff;
+                    letter-spacing: 3px;
+                    .overflow-hidden;
+                    vertical-align: middle;
+                }
+
+                span.date{
+                    display: inline-block;
+                    font-size: 12px;
+                    color: #76b7fa;
+                    line-height: 16px;
+                    vertical-align: middle;
+                }
+
+                a.block{
+                    line-height: 16px;
+                    display: block;
+                    margin-left: 90px;
+                    height: 16px;
+                    width: calc(~"100% - 90px");
+                }
+            }
+
+            &.hasBorder .time-line{
+                border-bottom: 1px solid #76b7fa;
+            }
+
+            &.big .time-line i.circle:after{
+                height: 42px;
             }
         }
     }

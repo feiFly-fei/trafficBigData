@@ -289,4 +289,245 @@ $(function () {
 
     var map = echarts.init(document.getElementById('chart_china_map'));
     map.setOption(chinaOption);
+
+
+    var indexOpt = {
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis:  {
+            type: 'value',
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }
+        },
+        yAxis: {
+            type: 'category',
+            data: ['太原××公司','北京××公司','上海××公司','南宁××公司','武汉××公司','大连××公司'],
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }
+        },
+        series: [
+            {
+                name: '优秀',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideRight'
+                    }
+                },
+                data: [750, 812, 601, 954, 990, 1000],
+                itemStyle: {
+                    normal: {
+                        color: '#55e4f9'
+                    }
+                }
+            },
+            {
+                name: '差评',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideRight'
+                    }
+                },
+                data: [120, 132, 91, 74, 120, 60],
+                itemStyle: {
+                    normal: {
+                        color: '#047aff'
+                    }
+                }
+            }
+        ]
+    };
+
+    var indexChart = echarts.init(document.getElementById('supply_index'));
+    indexChart.setOption(indexOpt);
+
+
+    var dataOpt ={
+        "series": [
+            {
+                "name": "中国",
+                "type": "map",
+                "mapType": "china",
+                "selectedMode": false,
+                "itemStyle": {
+                    "normal": {
+                        "areaColor": "#000",
+                        "borderWidth": 1.5,
+                        "borderColor": "#40a5fc",
+                        "label": {
+                            "show": true
+                        }
+                    },
+                    "emphasis": {
+                        "areaColor": "#2a333d",
+                        "label": {
+                            "show": true
+                        }
+                    }
+                },
+                "label": {
+                    "normal": {
+                        "show": false
+                    },
+                    "emphasis": {
+                        "show": false
+                    }
+                },
+                "data": [
+                    {
+                        "value": 856402,
+                        "name": "山西",
+                        "itemStyle": {
+                            "normal": {
+                                "color": "#66ffcc",
+                                "label": {
+                                    "show": false
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+
+    var dataChart = echarts.init(document.getElementById('data_report'));
+    dataChart.setOption(dataOpt);
+
+
+
+
+    function getVirtulData(year) {
+        year = year || '2017';
+        var date = +echarts.number.parseDate(year + '-01-01');
+        var end = +echarts.number.parseDate((+year + 1) + '-01-01');
+        var dayTime = 3600 * 24 * 1000;
+        var data = [];
+        for (var time = date; time < end; time += dayTime) {
+            data.push([
+                echarts.format.formatTime('yyyy-MM-dd', time),
+                Math.floor(Math.random() * 1000)
+            ]);
+        }
+        return data;
+    }
+
+    var graphData = [
+        [
+            1485878400000,
+            260
+        ],
+        [
+            1486137600000,
+            200
+        ],
+        [
+            1486569600000,
+            279
+        ],
+        [
+            1486915200000,
+            847
+        ],
+        [
+            1487347200000,
+            241
+        ],
+        [
+            1487779200000,
+            411
+        ],
+        [
+            1488124800000,
+            985
+        ]
+    ];
+
+    var links = graphData.map(function (item, idx) {
+        return {
+            source: idx,
+            target: idx + 1
+        };
+    });
+    links.pop();
+
+    var calOpt  = {
+        calendar:  {
+            orient: 'vertical',
+            yearLabel: {
+                show: false,
+                color: '#fff'
+            },
+            monthLabel: {
+                margin: 15,
+                color: '#fff'
+            },
+            cellSize: 40,
+            left: 20,
+            range: '2017-01',
+            itemStyle: {
+                normal: {
+                    color: '#0a0e1d'
+                }
+            }
+        },
+        series: [{
+            type: 'effectScatter',
+            coordinateSystem: 'calendar',
+            symbolSize: function (val) {
+                return val[1] / 50;
+            },
+            data: getVirtulData(2017),
+            itemStyle: {
+                normal: {
+                    color: '#ff9900'
+                }
+            }
+        }]
+    };
+    var calChart = echarts.init(document.getElementById('calendar_chart'));
+    calChart.setOption(calOpt)
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
