@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@color-black: #020e1f;
+@bg-body-color: #020e1f;
 html,body,ul,li,ol,p,span,div,header,main,h1,h2,h3,h4,h5,h6,em,i,small,section,aside,s,menu,code,label,eq,textarea,input,table,tr,td,th,thead,tbody,option,audio,canvas,svg,select,button,head,footer,applet,object,iframe,blockquote,pre,a,abbr,acronym,address,big,cite,del,dfn,font,img,ins,kbd,q,samp,strike,strong,msqrt,sub,sup,tt,var,b,u,center,dl,dt,dd,fieldset,form,legend,caption,card,circle,article{
     padding:0;
     margin: 0;
@@ -8,7 +8,7 @@ html,body,ul,li,ol,p,span,div,header,main,h1,h2,h3,h4,h5,h6,em,i,small,section,a
 html, body{
     width: 100%;
     height:100%;
-    background-color: @color-black;
+    background-color: @bg-body-color;
     color: #fff;
 }
 ul,
@@ -21,6 +21,10 @@ a { text-decoration: none; }
 
 .mrT20{
     margin-top: 20px;
+}
+
+.mrB30{
+    margin-bottom: 30px;
 }
 
 .nav-top{
@@ -46,11 +50,13 @@ a { text-decoration: none; }
     .panel.traffic-panel{
         background-color: transparent;
         border-color: #00bbff;
+        position: relative;
+        margin-bottom: 47px;
 
         .panel-heading{
             background-color: transparent;
-            border-color: @color-black;
-            padding: 25px 20px 5px;
+            border-color: @bg-body-color;
+            padding: 25px 20px;
 
             .panel-title{
                 color: #00ffff;
@@ -83,7 +89,11 @@ a { text-decoration: none; }
         }
 
         .panel-body{
-            padding: 20px;
+            padding: 0 20px 20px;
+
+            &.noPadding{
+                padding: 0;
+            }
         }
 
         .text-blue{
@@ -92,23 +102,21 @@ a { text-decoration: none; }
         }
 
         .border-short-box{
-            margin: 10px auto;
+            margin: 12px auto;
             position: relative;
             padding: 4px;
 
             p.text{
                 background-color: #0f152d;
                 font-size: 22px;
-            }
 
-            &.small p.text{
-                height: 49px;
-                line-height: 49px;
-            }
-
-            &.big p.text{
-                height: 79px;
-                line-height: 79px;
+                span{
+                    display:  inline-block;
+                    width: 15px;
+                    height: 31px;
+                    margin: 9px 2px;
+                    background: #30a2fa;
+                }
             }
 
             &:before{
@@ -181,6 +189,58 @@ a { text-decoration: none; }
                 border-top: none;
             }
         }
+
+        &:after{
+            content: "";
+            display: block;
+            width: 11px;
+            height: 11px;
+            position:  absolute;
+            bottom: -5px;
+            right: -5px;
+            border: 1px solid #00bbff;
+            -moz-border-radius:  50% ;
+            -webkit-border-radius:  50%;
+            border-radius: 50%;
+            background: @bg-body-color;
+        }
+
+        .horizontal-line{
+            position: absolute;
+            right: 30px;
+            bottom: -20px;
+            display: block;
+            width: 124px;
+            border-top: 1px solid #00bbff;
+
+            &:after{
+                content: "";
+                display: block;
+                width: 32px;
+                border-top: 1px solid #00bbff;
+                position: absolute;
+                right: -29px;
+                top: -10px;
+                transform: rotate(145deg);
+            }
+        }
+
+        &.noBorder{
+            border: none;
+            &:after{
+                display: none;
+            }
+        }
+    }
+
+    .chart-h350{
+        width: 100%;
+        height: 350px;
+    }
+
+    .chart-h780{
+        width: 100%;
+        height: 780px;
     }
 }
 

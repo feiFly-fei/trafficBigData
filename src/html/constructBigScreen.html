@@ -16,51 +16,95 @@
     </div>
     <div class="content">
         <div class="row">
-            <div class="col-md-4">
-                <div class="panel panel-default traffic-panel">
-                    <div class="panel-heading">
-                        <div class="panel-title title-dot"><p>优质企业推荐</p></div>
+            <div class="col-md-3">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="panel panel-default traffic-panel">
+                          <div class="panel-heading">
+                              <div class="panel-title title-dot"><p>优质企业推荐</p></div>
+                          </div>
+                          <div class="panel-body">
+                              <div class="row text-center">
+                                  <div class="col-md-5 col-md-offset-1 text-blue">推荐指数</div>
+                                  <div class="col-md-4 col-md-offset-1 text-blue">中标次数</div>
+                                  <div class="col-md-5 col-md-offset-1">
+                                      <div class="border-short-box small">
+                                          <p class="text">
+                                              <span>5</span><span>0</span><span>.</span><span>4</span><span>5</span>
+                                          </p>
+                                          <i class="left-bottom-border"></i>
+                                          <i class="right-bottom-border"></i>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4 col-md-offset-1">
+                                      <div class="border-short-box small">
+                                          <p class="text">
+                                              <span>4</span><span>6</span><span>8</span>
+                                          </p>
+                                          <i class="left-bottom-border"></i>
+                                          <i class="right-bottom-border"></i>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-12 mrT20 mrB30">
+                                      <div class="border-short-box big">
+                                          <table class="table traffic-table">
+                                              <thead>
+                                              <tr><th>地区</th><th>经营范围</th><th>推送的优质企业</th></tr>
+                                              </thead>
+                                              <tbody>
+                                              <tr><td>江苏省</td><td>通讯专业-漏缆 </td><td>江苏亨鑫科技有限公司  </td></tr>
+                                              </tbody>
+                                          </table>
+                                          <i class="left-bottom-border"></i>
+                                          <i class="right-bottom-border"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                              <i class="horizontal-line"></i>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="panel panel-default traffic-panel">
+                          <div class="panel-heading">
+                              <div class="panel-title title-dot"><p>数据分布</p></div>
+                          </div>
+                          <div class="panel-body noPadding">
+                              <div class="chart-h350" id="chart_data_distribution"></div>
+                              <i class="horizontal-line"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default traffic-panel noBorder">
+                    <div class="panel-body map-container">
+                        <div class="chart-h780" id="chart_china_map"></div>
                     </div>
-                    <div class="panel-body">
-                        <div class="row text-center">
-                            <div class="col-md-5 col-md-offset-1 text-blue">推荐指数</div>
-                            <div class="col-md-4 col-md-offset-1 text-blue">中标次数</div>
-                            <div class="col-md-5 col-md-offset-1">
-                                <div class="border-short-box small">
-                                    <p class="text">50.45</p>
-                                    <i class="left-bottom-border"></i>
-                                    <i class="right-bottom-border"></i>
-                                </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default traffic-panel">
+                            <div class="panel-heading">
+                                <div class="panel-title title-dot"><p>标讯</p></div>
                             </div>
-                            <div class="col-md-4 col-md-offset-1">
-                                <div class="border-short-box small">
-                                    <p class="text">492</p>
-                                    <i class="left-bottom-border"></i>
-                                    <i class="right-bottom-border"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-12 mrT20">
-                                <div class="border-short-box big">
-                                    <table class="table traffic-table">
-                                        <thead>
-                                        <tr><th>地区</th><th>经营范围</th><th>推送的优质企业</th></tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr><td>江苏省</td><td>通讯专业-漏缆 </td><td>江苏亨鑫科技有限公司  </td></tr>
-                                        </tbody>
-                                    </table>
-                                    <i class="left-bottom-border"></i>
-                                    <i class="right-bottom-border"></i>
-                                </div>
+                            <div class="panel-body">
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-5"></div>
-            <div class="col-md-3"></div>
         </div>
     </div>
 </div>
+
+<script src="../assets/jQuery/jquery.min.js"></script>
+<script src="../assets/echarts/echarts-all-3.js"></script>
+<script src="../assets/echarts/china.js"></script>
+<script src="../js/constructBigScreen.js"></script>
 </body>
 </html>
