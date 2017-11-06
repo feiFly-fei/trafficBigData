@@ -300,7 +300,7 @@ $(function () {
         },
         grid: {
             left: '3%',
-            right: '4%',
+            right: '5%',
             bottom: '3%',
             containLabel: true
         },
@@ -310,7 +310,8 @@ $(function () {
                 lineStyle: {
                     color: '#fff'
                 }
-            }
+            },
+            splitLine:{show: false}//去掉网格线
         },
         yAxis: {
             type: 'category',
@@ -319,7 +320,8 @@ $(function () {
                 lineStyle: {
                     color: '#fff'
                 }
-            }
+            },
+            splitLine:{show: false}//去掉网格线
         },
         series: [
             {
@@ -349,7 +351,7 @@ $(function () {
                         position: 'insideRight'
                     }
                 },
-                data: [120, 132, 91, 74, 120, 60],
+                data: [220, 232, 191, 174, 220, 160],
                 itemStyle: {
                     normal: {
                         color: '#047aff'
@@ -480,11 +482,15 @@ $(function () {
                 color: '#fff'
             },
             monthLabel: {
-                margin: 15,
+                margin: 5,
                 color: '#fff'
             },
-            cellSize: 40,
-            left: 20,
+            dayLabel:{
+                margin: 10,
+                color: '#fff'
+            },
+            cellSize: 36,
+            left: 40,
             range: '2017-01',
             itemStyle: {
                 normal: {
@@ -507,7 +513,130 @@ $(function () {
         }]
     };
     var calChart = echarts.init(document.getElementById('calendar_chart'));
-    calChart.setOption(calOpt)
+    calChart.setOption(calOpt);
+
+
+    var trendOpt = {
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            textStyle:{
+                color: '#fff'
+            },
+            inactiveColor:'#666',
+            data:['竞争对手','投资企业','本公司','上游公司','下游公司','测试','合作伙伴','子公司']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            axisLine:{
+              lineStyle:{
+                  color:'#fff'
+              }
+            },
+            data: ['2017-07-10','2017-07-20','2017-07-30','2017-08-10','2017-08-20','2017-08-30','2017-09-10']
+        },
+        yAxis: {
+            axisLine:{
+                lineStyle:{
+                    color:'#fff'
+                }
+            },
+            type: 'value'
+        },
+        series: [
+            {
+                name:'竞争对手',
+                type:'line',
+                data:[0, 332, 101, 434, 110, 530, 210],
+                itemStyle:{
+                    normal: {
+                        color : '#55e4f9'
+                    }
+                }
+            },
+            {
+                name:'投资企业',
+                type:'line',
+                data:[0, 282, 131, 334, 90, 478, 110],
+                itemStyle: {
+                    normal: {
+                        color: '#047aff'
+                    }
+                }
+            },
+            {
+                name:'本公司',
+                type:'line',
+                data:[0, 412, 121, 354, 190, 530, 210],
+                itemStyle: {
+                    normal: {
+                        color: '#01ffba'
+                    }
+                }
+            },
+            {
+                name:'上游公司',
+                type:'line',
+                data:[0, 232, 51, 334, 190, 430, 220],
+                itemStyle:{
+                    normal:{
+                        color: '#8803f9'
+                    }
+                }
+            },
+            {
+                name:'下游公司',
+                type:'line',
+                data:[0, 492, 201, 509, 190, 430, 120],
+                itemStyle:{
+                    normal:{
+                        color: '#c400fd'
+                    }
+                }
+            },
+            {
+                name:'测试',
+                type:'line',
+                data:[0, 432, 171, 387, 153, 358, 100],
+                itemStyle:{
+                    normal:{
+                        color: '#5f6fee'
+                    }
+                }
+            },
+            {
+                name:'合作伙伴',
+                type:'line',
+                data:[0, 182, 101, 334, 210, 460, 220],
+                itemStyle:{
+                    normal:{
+                        color: '#04b2fb'
+                    }
+                }
+            },
+            {
+                name:'子公司',
+                type:'line',
+                stack: '总量',
+                data:[0, 132, 71, 234, 104, 330, 78],
+                itemStyle: {
+                    normal:{
+                        color: '#4304f9'
+                    }
+                }
+            }
+        ]
+    };
+    var trendChart = echarts.init(document.getElementById('data_trend'));
+    trendChart.setOption(trendOpt);
 });
 
 
