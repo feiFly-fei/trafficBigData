@@ -240,7 +240,7 @@ a { text-decoration: none; }
                 .text-blue;
                 font-weight:normal;
                 text-align: center;
-                border-bottom: 1px dotted #55e4f9;
+                border-bottom: 1px dashed #55e4f9;
             }
 
             tbody tr td{
@@ -425,6 +425,150 @@ a { text-decoration: none; }
                 height: 42px;
             }
         }
+
+        i.border-top-animate{
+            display: block;
+            width: 35px;
+            height: 5px;
+            background: #0b82ce;
+            color: #0b82ce;
+            position: absolute;
+            -webkit-animation: clipMe 6s linear infinite;
+            -o-animation: clipMe 6s linear infinite;
+            animation: clipMe 6s linear infinite;
+
+            &:before{
+                content: '';
+                display: block;
+                width: 40px;
+                height: 7px;
+                background: #0b82ce;
+                color: #0b82ce;
+                position: absolute;
+                left: -40px;
+                top: -1px;
+            }
+
+            &:after{
+                content: '';
+                display: block;
+                width: 20px;
+                height: 2px;
+                background: #0b82ce;
+                color: #0b82ce;
+                position: absolute;
+                left: 30px;
+                top: 1px;
+            }
+        }
+
+        i.border-right-animate{
+            display: block;
+            height: 35px;
+            width: 5px;
+            background: #0b82ce;
+            color: #0b82ce;
+            position: absolute;
+            -webkit-animation: clipMe1 6s linear infinite;
+            -o-animation: clipMe1 6s linear infinite;
+            animation: clipMe1 6s linear infinite;
+
+            &:before{
+                content: '';
+                display: block;
+                height: 40px;
+                width: 7px;
+                background: #0b82ce;
+                color: #0b82ce;
+                position: absolute;
+                top: -40px;
+                left: -1px;
+            }
+
+            &:after{
+                content: '';
+                display: block;
+                height: 20px;
+                width: 2px;
+                background: #0b82ce;
+                color: #0b82ce;
+                position: absolute;
+                top: 30px;
+                left: 1px;
+            }
+        }
+
+        //panel的角为斜角
+        &.panel-oblique-angle{
+
+            &::before{
+                width: 40px;
+                height: 55px;
+                top: -26px;
+                left: -12px;
+                border: none;
+                border-right: 1px solid #00bbff;
+                transform: rotate(51deg);
+                background: @bg-body-color;
+            }
+
+            &::after{
+                width: 30px;
+                height: 40px;
+                top: -15px;
+                right: -13px;
+                border: none;
+                border-left: 1px solid @border-blue-color;
+                transform: rotate(-41deg);
+                background: @bg-body-color;
+            }
+
+            .left-bottom-angle{
+                width: 40px;
+                height: 55px;
+                bottom: -25px;
+                left: -12px;
+                border: none;
+                border-right: 1px solid @border-blue-color;
+                transform: rotate(-50deg);
+                background: @bg-body-color;
+            }
+
+            .panel-heading{
+                padding: 15px 35px 20px;
+            }
+        }
+
+        i.left-top-img{
+            display: block;
+            width: 93px;
+            height: 193px;
+            position: absolute;
+            left: -19px;
+            top: -10px;
+            background-image: url("../images/irregular-left-border.png");
+            background-repeat: no-repeat;
+            z-index: 9;
+        }
+
+        i.right-top-img{
+            display: block;
+            width: 77px;
+            height: 131px;
+            position: absolute;
+            right: -21px;
+            top: -10px;
+            background-image: url("../images/irregular-right-border.png");
+            background-repeat: no-repeat;
+            z-index: 9;
+        }
+        
+        &.body-bg-blue-panel{
+            .panel-body{
+                padding-top: 15px;
+                background: rgba(8, 25, 54, 0.4);
+            }
+        }
     }
 
     .chart-h350{
@@ -440,6 +584,98 @@ a { text-decoration: none; }
     .chart-h420{
         width: 100%;
         height: 420px;
+    }
+}
+
+@keyframes clipMe {
+    0%{
+        left: 40px;
+        top: -3px;
+    }
+    25%{
+        top: -3px;
+        left: 25%;
+    }
+    50%{
+        top: -3px;
+        left: 50%;
+    }
+    75%{
+        top: -3px;
+        left: 75%;
+    }
+    100%{
+        left: calc(~"100% - 50px");
+        top: -3px;
+    }
+}
+
+@-webkit-keyframes clipMe {
+    0%{
+        left: 40px;
+        top: -3px;
+    }
+    25%{
+        top: -3px;
+        left: 25%;
+    }
+    50%{
+        top: -3px;
+        left: 50%;
+    }
+    75%{
+        top: -3px;
+        left: 75%;
+    }
+    100%{
+        left: calc(~"100% - 50px");
+        top: -3px;
+    }
+}
+
+@keyframes clipMe1 {
+    0%{
+        right: -2px;
+        top: 40px;
+    }
+    25%{
+        right: -2px;
+        top: 25%;
+    }
+    50%{
+        right: -2px;
+        top: 50%;
+    }
+    75%{
+        right: -2px;
+        top: 75%;
+    }
+    100%{
+        top: calc(~"100% - 50px");
+        right: -2px;
+    }
+}
+
+@-webkit-keyframes clipMe1 {
+    0%{
+        right: -2px;
+        top: 40px;
+    }
+    25%{
+        right: -2px;
+        top: 25%;
+    }
+    50%{
+        right: -2px;
+        top: 50%;
+    }
+    75%{
+        right: -2px;
+        top: 75%;
+    }
+    100%{
+        top: calc(~"100% - 50px");
+        right: -2px;
     }
 }
 
