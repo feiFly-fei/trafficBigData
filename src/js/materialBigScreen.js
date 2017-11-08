@@ -1,6 +1,6 @@
 
 /**
- * Created by lifei on 2017/11/3.
+ * Created by lifei on 2017/11/8.
  */
 
 
@@ -635,6 +635,81 @@ $(function () {
     };
     var trendChart = echarts.init(document.getElementById('data_trend'));
     trendChart.setOption(trendOpt);
+
+
+    var developOpt = {
+        legend: {
+            data:['本产业','新型产业','竞争业']
+        },
+        xAxis: [
+            {
+                type: 'category',
+                data: ['6月','7月','8月','9月','10月','11月'],
+                axisPointer: {
+                    type: 'shadow'
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                }
+            },
+            {
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                }
+            }
+        ],
+        series: [
+            {
+                name:'本产业',
+                type:'bar',
+                data:[ 76.7, 135.6, 162.2, 32.6, 20.0, 6.4],
+                itemStyle:{
+                    normal:{
+                        color: '#00d8ff'
+                    }
+                }
+            },
+            {
+                name:'新型产业',
+                type:'bar',
+                data:[ 70.7, 175.6, 182.2, 48.7, 18.8, 6.0],
+                itemStyle:{
+                    normal:{
+                        color: '#6666ff'
+                    }
+                }
+            },
+            {
+                name:'竞争业',
+                type:'line',
+                smooth:true,
+                data:[ 60.2, 75.3, 83.4, 103.0, 86.5, 72.0],
+                itemStyle:{
+                    normal:{
+                        color: '#ffcc00'
+                    }
+                }
+            }
+        ]
+    };
+
+    var developChart = echarts.init(document.getElementById('develop_trend'));
+    developChart.setOption(developOpt)
 });
 
 

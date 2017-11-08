@@ -81,6 +81,8 @@ a { text-decoration: none; }
     }
 }
 
+
+@border-green-color: #00ffff;
 .content{
     padding: 40px;
 
@@ -128,6 +130,21 @@ a { text-decoration: none; }
                     transform: rotate(180deg);
                     -ms-transform: rotate(180deg); /* IE 9 */
                     -webkit-transform: rotate(180deg); /* Safari and Chrome */;
+                }
+
+                &.title-left-column:before{
+                    content: "";
+                    display: inline-block;
+                    height: 20px;
+                    width: 3px;
+                    background: #0099ff;
+                    position: absolute;
+                    left: 0;
+                    top: 3px;
+                }
+
+                &.title-left-column p{
+                    margin-left: 13px;
                 }
             }
         }
@@ -235,6 +252,7 @@ a { text-decoration: none; }
         
         .traffic-table{
             margin-bottom: 0;
+            background-color: #0f152d;
 
             thead tr th{
                 .text-blue;
@@ -563,10 +581,164 @@ a { text-decoration: none; }
             z-index: 9;
         }
         
-        &.body-bg-blue-panel{
+        &.panel-bg-blue{
+            margin-bottom: 20px;
+
+            .panel-heading{
+                padding-bottom: 10px;
+                text-align: center;
+                font-size: 0;
+                position: relative;
+
+                p{
+                    font-size: 18px;
+                    padding: 7px 20px;
+                    border-top: 1px solid @border-green-color;
+                    border-bottom:1px solid @border-green-color;
+                    position: relative;
+                    background: @bg-body-color;
+
+                    &::before{
+                        content: '';
+                        display: block;
+                        height: 45px;
+                        width: 15px;
+                        background: @bg-body-color;
+                        border-right: 1px solid @border-green-color;
+                        -webkit-transform: rotate(20deg);
+                        -moz-transform: rotate(20deg);
+                        -ms-transform: rotate(20deg);
+                        -o-transform: rotate(20deg);
+                        transform: rotate(20deg);
+                        position: absolute;
+                        left: -7px;
+                        top: -5px;
+                    }
+
+                    &::after{
+                        content: '';
+                        display: block;
+                        height: 45px;
+                        width: 15px;
+                        background: @bg-body-color;
+                        border-left: 1px solid @border-green-color;
+                        -webkit-transform: rotate(20deg);
+                        -moz-transform: rotate(20deg);
+                        -ms-transform: rotate(20deg);
+                        -o-transform: rotate(20deg);
+                        transform: rotate(20deg);
+                        position: absolute;
+                        right: -7px;
+                        top: 0px;
+                    }
+                }
+                
+                i.line{
+                    display: inline-block;
+                    height: 1px;
+                    width: calc(~"100% - 30px");
+                    background: @border-green-color;
+                    position: absolute;
+                    z-index: 0;
+                    left: 15px;
+                    top: 20px;
+                }
+
+                .panel-title::before,
+                .panel-title::after{
+                    content: '';
+                    display: inline-block;
+                    width: 6px;
+                    height: 6px;
+                    .border-radius-half;
+                    background: @border-green-color;
+                    position: absolute;
+                    left: 0;
+                    top: 17px;
+                }
+
+                .panel-title:after{
+                    left: auto;
+                    right: 0;
+                }
+            }
             .panel-body{
                 padding-top: 15px;
-                background: rgba(8, 25, 54, 0.4);
+                background: #081935;
+            }
+        }
+
+        &.panel-border-column{
+            &:before{
+                content: "";
+                display: block;
+                width: 20px;
+                height: 40px;
+                position: absolute;
+                left: -6px;
+                top: -11px;
+                border:none;
+                border-right: 1px solid @border-blue-color;
+                -webkit-transform: rotate(40deg);
+                -moz-transform: rotate(40deg);
+                -ms-transform: rotate(40deg);
+                -o-transform: rotate(40deg);
+                transform: rotate(40deg);
+                background: @bg-body-color;
+            }
+            
+            i.blue-top-square{
+                display: block;
+                width: 5px;
+                height: 29px;
+                background: #0099ff;
+                -webkit-transform: rotate(40deg);
+                -moz-transform: rotate(40deg);
+                -ms-transform: rotate(40deg);
+                -o-transform: rotate(40deg);
+                transform: rotate(40deg);
+                position: absolute;
+                left: 9px;
+                top: 0;
+            }
+
+            &:after{
+                content: "";
+                display: block;
+                width: 20px;
+                height: 40px;
+                position: absolute;
+                top: auto;
+                left: -6px;
+                bottom: -11px;
+                border:none;
+                border-right: 1px solid @border-blue-color;
+                -webkit-transform: rotate(-40deg);
+                -moz-transform: rotate(-40deg);
+                -ms-transform: rotate(-40deg);
+                -o-transform: rotate(-40deg);
+                transform: rotate(-40deg);
+                background: @bg-body-color;
+            }
+
+            i.blue-bottom-square{
+                display: block;
+                width: 5px;
+                height: 29px;
+                background: #0099ff;
+                -webkit-transform: rotate(-40deg);
+                -moz-transform: rotate(-40deg);
+                -ms-transform: rotate(-40deg);
+                -o-transform: rotate(-40deg);
+                transform: rotate(-40deg);
+                position: absolute;
+                left: 9px;
+                bottom: 0;
+                z-index: 2;
+            }
+
+            .panel-heading{
+                padding: 15px 35px;
             }
         }
     }
@@ -584,6 +756,11 @@ a { text-decoration: none; }
     .chart-h420{
         width: 100%;
         height: 420px;
+    }
+
+    .chart-h330{
+        width: 100%;
+        height: 330px;
     }
 }
 
