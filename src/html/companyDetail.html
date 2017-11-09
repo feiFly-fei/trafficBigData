@@ -4,37 +4,51 @@
     <meta charset="UTF-8">
     <title>优质企业详情</title>
     <link rel="stylesheet" href="../assets/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap-table/bootstrap-table.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap-select/bootstrap-select.min.css">
     <!--<link rel="stylesheet" href="../css/style.min.css">-->
     <link rel="stylesheet/less" href="../css/style.less" type="text/css">
     <script src="../assets/less/less.min.js"></script>
 </head>
 <body>
 <div class="content">
-    <div class="panel traffic-panel">
+    <div class="panel traffic-panel noBorder" style="margin-bottom: 10px;">
         <div class="panel-heading">
             <div class="panel-title title-dot"><p>优质企业推荐</p></div>
         </div>
         <div class="panel-body">
-            <div class="row">
-                <div class="col-md-4">
-
+            <div class="row mrB30">
+                <div class="col-md-12">
+                    <select class="selectpicker traffic-select">
+                        <option value="1">经营范围1</option>
+                        <option value="2">经营范围2</option>
+                        <option value="4">经营范围3</option>
+                        <option value="3">经营范围4</option>
+                        <option value="5">经营范围5</option>
+                    </select>
+                    <select class="selectpicker traffic-select">
+                        <option value="1"> 所属地区</option>
+                        <option value="3"> 北京</option>
+                        <option value="2"> 上海</option>
+                        <option value="4"> 天津</option>
+                        <option value="5"> 大连</option>
+                        <option value="6"> 武汉</option>
+                    </select>
                 </div>
             </div>
             <div class="table-wrap">
-                <table class="table traffic-black-table">
-                    <thead>
-                    <tr>
-                        <th>排名</th><th>企业</th><th>法人代表</th><th>所属行业</th><th>企业资源</th>
-                        <th>经营范围</th><th>注册资本</th><th>成立日期</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr><td>1</td><td></td></tr>
-                    </tbody>
+                <table class="table traffic-black-table text-center" id="table">
+
                 </table>
+
             </div>
         </div>
     </div>
 </div>
+<script src="../assets/jQuery/jquery.min.js"></script>
+<script src="../assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../assets/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../assets/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="../js/companyDetail.js"></script>
 </body>
 </html>

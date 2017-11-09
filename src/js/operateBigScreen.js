@@ -635,6 +635,11 @@ $(function () {
     };
     var trendChart = echarts.init(document.getElementById('data_trend'));
     trendChart.setOption(trendOpt);
+
+    $('#timeline1').myScroll({
+        speed: 40,
+        rowHeight: 45
+    });
 });
 
 

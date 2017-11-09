@@ -1,0 +1,66 @@
+{
+  "data": [
+    {
+      "rank": "1", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    },
+    {
+      "rank": "2", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    },
+    {
+      "rank": "3", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    },
+    {
+      "rank": "4", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    },
+    {
+      "rank": "5", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    },
+    {
+      "rank": "6", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    },
+    {
+      "rank": "7", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    },
+    {
+      "rank": "8", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    },
+    {
+      "rank": "9", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    },
+    {
+      "rank": "10", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    },
+    {
+      "rank": "11", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业11", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    },
+    {
+      "rank": "12", "companyName": "江苏恒信科技有限公司", "representative": "张三", "belongIndustry": "科学研究和技术服务", "companySource": "暂无",
+      "operateScale": "通信专业12", "registerMoney": "5000万元人民币", "setupDate": "2013-10-10", "employeeNum": "500",
+      "area": "江苏", "biddingNum": "828", "bidPrice": "100万美元"
+    }
+  ],
+  "rows": 10,
+  "total": 12
+}
