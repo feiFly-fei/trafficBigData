@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录注册</title>
+    <link rel="stylesheet" href="../../assets/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/bootstrap-select/bootstrap-select.min.css">
+    <link rel="stylesheet/less" type="text/css" href="../../css/style.less">
+    <script src="../../assets/less/less.min.js"></script>
+</head>
+<body>
+<div class="register">
+    <div class="top">
+        <div class="step-box">
+            <ul class="step-ul">
+                <li class="step-li first">基础信息</li>
+                <li class="step-li second">绑定手机号</li>
+                <li class="step-li third">套餐选择</li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="step-first">
+            <form class="regist-form">
+                <div class="form-group">
+                    <label for="name">姓名：</label>
+                    <input type="text" id="name" class="form-control" placeholder="请输入账号">
+                </div>
+                <div class="form-group">
+                    <label for="companyName">公司名称：</label>
+                    <input type="text" id="companyName" class="form-control" placeholder="请输入密码">
+                </div>
+                <div class="form-group" id="distpicker">
+                    <label>所在地区：</label>
+                    <select id="province" class="form-control"></select>
+                    <select id="city" class="form-control"></select>
+                    <select id="district" class="form-control"></select>
+                </div>
+                <div class="form-group">
+                    <label for="industry">所属行业：</label>
+                    <select id="industry" class="selectpicker traffic-select">
+                        <option value="1">金融行业1</option>
+                        <option value="2">金融行业2</option>
+                        <option value="3">金融行业3</option>
+                        <option value="4">金融行业4</option>
+                        <option value="5">金融行业5</option>
+                        <option value="6">金融行业6</option>
+                        <option value="7">金融行业7</option>
+                        <option value="8">金融行业8</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-green">下一步</button>
+            </form>
+        </div>
+        <div class="step-second">
+
+        </div>
+        <div class="step-third">
+            
+        </div>
+    </div>
+</div>
+<script src="../../assets/jQuery/jquery.min.js"></script>
+<script src="../../assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../assets/areaPicker/distpicker.data.js"></script>
+<script src="../../assets/areaPicker/distpicker.js"></script>
+<script src="../../assets/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../js/login/register.js"></script>
+</body>
+</html>
