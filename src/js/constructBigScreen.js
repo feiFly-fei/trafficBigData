@@ -482,6 +482,7 @@ $(function () {
                 color: '#fff'
             },
             monthLabel: {
+                show: false,
                 margin: 5,
                 color: '#fff'
             },
@@ -489,8 +490,8 @@ $(function () {
                 margin: 10,
                 color: '#fff'
             },
-            cellSize: 36,
-            left: 40,
+            cellSize: 41,
+            left: 10,
             range: '2017-01',
             itemStyle: {
                 normal: {

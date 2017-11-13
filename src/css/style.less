@@ -67,6 +67,7 @@ a { text-decoration: none; }
 .nav-top{
     width: 100%;
     padding: 15px;
+    position: relative;
 
     .text-box{
         background-image: url("../images/bg-top.png");
@@ -78,6 +79,23 @@ a { text-decoration: none; }
         font-size: 28px;
         text-align: center;
         color: #08ecfb;
+    }
+
+    .logo-box{
+        position: absolute;
+        top: 38px;
+        right: 15px;
+
+        &>a,
+        &>a:hover{
+            font-size: 18px;
+            color: #ccc;
+            text-decoration: none;
+            display: inline-block;
+            padding-left: 25px;
+            background-image: url("../images/icon-center.png");
+            background-repeat:no-repeat;
+        }
     }
 }
 
@@ -451,9 +469,8 @@ a { text-decoration: none; }
             background: #0b82ce;
             color: #0b82ce;
             position: absolute;
-            -webkit-animation: clipMe 6s linear infinite;
-            -o-animation: clipMe 6s linear infinite;
-            animation: clipMe 6s linear infinite;
+            left: 165px;
+            top: -3px;
 
             &:before{
                 content: '';
@@ -487,9 +504,8 @@ a { text-decoration: none; }
             background: #0b82ce;
             color: #0b82ce;
             position: absolute;
-            -webkit-animation: clipMe1 6s linear infinite;
-            -o-animation: clipMe1 6s linear infinite;
-            animation: clipMe1 6s linear infinite;
+            top: 150px;
+            right: -3px;
 
             &:before{
                 content: '';
@@ -514,6 +530,16 @@ a { text-decoration: none; }
                 top: 30px;
                 left: 1px;
             }
+        }
+
+        i.separate-line{
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            margin-left: -1px;
+            display: block;
+            height: calc(~"100% - 60px");
+            border-left: 1px dashed @border-blue-color;
         }
 
         //panel的角为斜角
