@@ -9,54 +9,265 @@
     <script src="../../assets/less/less.min.js"></script>
 </head>
 <body>
-<div class="register">
+<div class="registerPage">
     <div class="top">
         <div class="step-box">
             <ul class="step-ul">
-                <li class="step-li first">基础信息</li>
-                <li class="step-li second">绑定手机号</li>
-                <li class="step-li third">套餐选择</li>
+                <li class="step-li first selected">
+                    <span>基础信息</span><i class="dashed-line"></i>
+                </li>
+                <li class="step-li second"><span>绑定手机号</span></li>
+                <li class="step-li third"><span>套餐选择</span></li>
             </ul>
         </div>
     </div>
     <div class="bottom">
-        <div class="step-first">
-            <form class="regist-form">
-                <div class="form-group">
-                    <label for="name">姓名：</label>
-                    <input type="text" id="name" class="form-control" placeholder="请输入账号">
+        <div class="step-first-wrap">
+            <form class="regist-form form-horizontal">
+                <div class="form-group mrB30">
+                    <label for="name" class="col-md-3 control-label">姓名：</label>
+                    <div class="col-md-9">
+                        <input type="text" id="name" class="form-control" placeholder="请输入账号">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="companyName">公司名称：</label>
-                    <input type="text" id="companyName" class="form-control" placeholder="请输入密码">
+                <div class="form-group mrB30">
+                    <label for="companyName" class="col-md-3 control-label">公司名称：</label>
+                    <div class="col-md-9">
+                        <input type="text" id="companyName" class="form-control" placeholder="请输入密码">
+                    </div>
                 </div>
-                <div class="form-group" id="distpicker">
-                    <label>所在地区：</label>
-                    <select id="province" class="form-control"></select>
-                    <select id="city" class="form-control"></select>
-                    <select id="district" class="form-control"></select>
+                <div class="form-group mrB30" id="distpicker">
+                    <label class="col-md-3 control-label" for="province">所在地区：</label>
+                    <div class="col-md-3">
+                        <select id="province" class="form-control"></select>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="city" class="form-control"></select>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="district" class="form-control"></select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="industry">所属行业：</label>
-                    <select id="industry" class="selectpicker traffic-select">
-                        <option value="1">金融行业1</option>
-                        <option value="2">金融行业2</option>
-                        <option value="3">金融行业3</option>
-                        <option value="4">金融行业4</option>
-                        <option value="5">金融行业5</option>
-                        <option value="6">金融行业6</option>
-                        <option value="7">金融行业7</option>
-                        <option value="8">金融行业8</option>
-                    </select>
+                <div class="form-group mrB30">
+                    <label for="industry" class="col-md-3 control-label">所属行业：</label>
+                   <div class="col-md-9">
+                       <select id="industry" class="selectpicker traffic-select">
+                           <option value="0">请选择</option>
+                           <option value="1">金融行业1</option>
+                           <option value="2">金融行业2</option>
+                           <option value="3">金融行业3</option>
+                           <option value="4">金融行业4</option>
+                           <option value="5">金融行业5</option>
+                           <option value="6">金融行业6</option>
+                           <option value="7">金融行业7</option>
+                           <option value="8">金融行业8</option>
+                       </select>
+                   </div>
                 </div>
-                <button type="button" class="btn btn-green">下一步</button>
+               <div class="text-center btn-wrap">
+                   <button type="button" class="btn btn-green nextStepBtn toSecondBtn">下一步</button>
+               </div>
             </form>
         </div>
-        <div class="step-second">
+        <div class="step-second-wrap" style="display: none;">
+            <form class="regist-form form-horizontal">
+                <div class="form-group mrB30">
+                    <label for="phoneNum" class="col-md-2 control-label">手机号：</label>
+                    <div class="col-md-10"><input type="text" class="form-control" id="phoneNum"></div>
+                </div>
+                <div class="form-group mrB30">
+                    <label for="" class="col-md-2 control-label">验证码：</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-green">获取验证码</button>
+                    </div>
+                </div>
+                <div class="form-group mrB30">
+                    <label for="" class="col-md-2 control-label">密码：</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group mrB30">
+                    <label for="" class="col-md-2">&nbsp;</label>
+                    <div class="checkbox col-md-10">
+                        <label>
+                            <input type="checkbox"> 再点击下一个按钮，表示您接受
+                            <a href="javascript:;" class="rulesBtn">《慧数轨道交通大数据平台条款》</a> 和
+                            <a href="javascript:;" class="rulesBtn">《用户须知》</a>
+                        </label>
+                    </div>
+                </div>
 
+                <div class="text-center btn-wrap">
+                    <button type="button" class="btn btn-green nextStepBtn toThirdBtn">下一步</button>
+                </div>
+            </form>
         </div>
-        <div class="step-third">
-            
+        <div class="step-third-wrap" style="display: none;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel register-panel">
+                        <div class="panel-heading text-center">
+                            <div class="panel-title title-dot"><p>套餐一</p></div>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group text-center package-list">
+                                <li class="list-group-item"><span class="packageName">免费7天试用</span></li>
+                                <li class="list-group-item">本行业标讯不限</li>
+                                <li class="list-group-item">行业热点不限</li>
+                                <li class="list-group-item">优质企业推荐不限</li>
+                                <li class="list-group-item">本公司舆情不限</li>
+                                <li class="list-group-item">竞争对手舆情不限</li>
+                                <li class="list-group-item">口碑指数不限</li>
+                                <li class="list-group-item">预警不限</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel register-panel">
+                        <div class="panel-heading text-center">
+                            <div class="panel-title title-dot"><p>套餐二</p></div>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group text-center package-list">
+                                <li class="list-group-item"><span class="packageName">初级套餐</span></li>
+                                <li class="list-group-item">建设单位标讯+特别关注 &nbsp; 3个</li>
+                                <li class="list-group-item">行业热点不限</li>
+                                <li class="list-group-item">本单位供应商舆情 &nbsp;5个</li>
+                                <li class="list-group-item">本公司舆情不限</li>
+                                <li class="list-group-item">优质企业推荐 &nbsp; 5个</li>
+                                <li class="list-group-item">竞争对手舆情 &nbsp; 5个</li>
+                                <li class="list-group-item">口碑指数不限</li>
+                                <li class="list-group-item">预警不限</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel register-panel">
+                        <div class="panel-heading text-center">
+                            <div class="panel-title title-dot"><p>套餐三</p></div>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group text-center package-list">
+                                <li class="list-group-item"><span class="packageName">VIP套餐</span></li>
+                                <li class="list-group-item">建设单位标讯+特别关注 &nbsp; 10个</li>
+                                <li class="list-group-item">行业热点不限</li>
+                                <li class="list-group-item">本单位供应商舆情 &nbsp;10个</li>
+                                <li class="list-group-item">本公司舆情不限</li>
+                                <li class="list-group-item">优质企业推荐 &nbsp; 10个</li>
+                                <li class="list-group-item">竞争对手舆情 &nbsp; 6个</li>
+                                <li class="list-group-item">口碑指数不限</li>
+                                <li class="list-group-item">预警不限</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel register-panel">
+                        <div class="panel-heading text-center">
+                            <div class="panel-title title-dot"><p>套餐四</p></div>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group text-center package-list">
+                                <li class="list-group-item"><span class="packageName">初级套餐</span></li>
+                                <li class="list-group-item">建设单位标讯+特别关注不限</li>
+                                <li class="list-group-item">行业热点不限</li>
+                                <li class="list-group-item">本单位供应商舆情不限</li>
+                                <li class="list-group-item">本公司舆情不限</li>
+                                <li class="list-group-item">优质企业推荐不限</li>
+                                <li class="list-group-item">竞争对手舆情不限</li>
+                                <li class="list-group-item">口碑指数不限</li>
+                                <li class="list-group-item">预警不限</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel register-panel">
+                        <div class="panel-heading text-center">
+                            <div class="panel-title title-dot"><p>套餐二</p></div>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group text-center package-list">
+                                <li class="list-group-item"><span class="packageName">初级套餐</span></li>
+                                <li class="list-group-item">建设单位标讯+特别关注 &nbsp; 3个</li>
+                                <li class="list-group-item">行业热点不限</li>
+                                <li class="list-group-item">本单位供应商舆情 &nbsp;5个</li>
+                                <li class="list-group-item">本公司舆情不限</li>
+                                <li class="list-group-item">优质企业推荐 &nbsp; 5个</li>
+                                <li class="list-group-item">竞争对手舆情 &nbsp; 5个</li>
+                                <li class="list-group-item">口碑指数不限</li>
+                                <li class="list-group-item">预警不限</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel register-panel">
+                        <div class="panel-heading text-center">
+                            <div class="panel-title title-dot"><p>套餐二</p></div>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group text-center package-list">
+                                <li class="list-group-item"><span class="packageName">初级套餐</span></li>
+                                <li class="list-group-item">建设单位标讯+特别关注 &nbsp; 3个</li>
+                                <li class="list-group-item">行业热点不限</li>
+                                <li class="list-group-item">本单位供应商舆情 &nbsp;5个</li>
+                                <li class="list-group-item">本公司舆情不限</li>
+                                <li class="list-group-item">优质企业推荐 &nbsp; 5个</li>
+                                <li class="list-group-item">竞争对手舆情 &nbsp; 5个</li>
+                                <li class="list-group-item">口碑指数不限</li>
+                                <li class="list-group-item">预警不限</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel register-panel">
+                        <div class="panel-heading text-center">
+                            <div class="panel-title title-dot"><p>套餐二</p></div>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group text-center package-list">
+                                <li class="list-group-item"><span class="packageName">初级套餐</span></li>
+                                <li class="list-group-item">建设单位标讯+特别关注 &nbsp; 3个</li>
+                                <li class="list-group-item">行业热点不限</li>
+                                <li class="list-group-item">本单位供应商舆情 &nbsp;5个</li>
+                                <li class="list-group-item">本公司舆情不限</li>
+                                <li class="list-group-item">优质企业推荐 &nbsp; 5个</li>
+                                <li class="list-group-item">竞争对手舆情 &nbsp; 5个</li>
+                                <li class="list-group-item">口碑指数不限</li>
+                                <li class="list-group-item">预警不限</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel register-panel">
+                        <div class="panel-heading text-center">
+                            <div class="panel-title title-dot"><p>套餐二</p></div>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group text-center package-list">
+                                <li class="list-group-item"><span class="packageName">初级套餐</span></li>
+                                <li class="list-group-item">建设单位标讯+特别关注 &nbsp; 3个</li>
+                                <li class="list-group-item">行业热点不限</li>
+                                <li class="list-group-item">本单位供应商舆情 &nbsp;5个</li>
+                                <li class="list-group-item">本公司舆情不限</li>
+                                <li class="list-group-item">优质企业推荐 &nbsp; 5个</li>
+                                <li class="list-group-item">竞争对手舆情 &nbsp; 5个</li>
+                                <li class="list-group-item">口碑指数不限</li>
+                                <li class="list-group-item">预警不限</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

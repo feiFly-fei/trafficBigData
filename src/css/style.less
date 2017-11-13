@@ -944,7 +944,7 @@ a { text-decoration: none; }
     }
 
     .form-control{
-        border: 1px solid @border-blue-color;
+        border: 1px solid #0e96e4;
         background: transparent;
         color: #fff;
     }
@@ -955,7 +955,7 @@ a { text-decoration: none; }
         padding-left:0;
     }
     
-    .btn.register{
+    .btn.registerBtn{
         color: @border-green-color;
         text-decoration: none;
         padding-right:0;
@@ -972,19 +972,236 @@ a { text-decoration: none; }
 
 
 
-.register{
+.registerPage{
     height:100%;
     width: 100%;
     background: #000;
+    padding: 20px;
     
     &>.top{
         height: 180px;
-        margin: 20px;
+        margin-bottom: 20px;
         background: @bg-login-color;
+
+        .step-box{
+            height: 100%;
+
+            .step-ul{
+                font-size:0;
+                height: 100%;
+                position: relative;
+
+                i.dashed-line{
+                    position: absolute;
+                    top: 90px;
+                    left: 40px;
+                    width: calc(~"100% - 80px");
+                    border-top: 1px dashed @border-green-color;
+
+                    &:before,
+                    &:after{
+                        content: '';
+                        background-image: url('../images/icon-arrow.png');
+                        background-repeat:no-repeat;
+                        display: inline-block;
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        left: 33%;
+                        top: -13px;
+                    }
+
+                    &:after{
+                        left: 66%;
+                    }
+                }
+
+                .step-li{
+                    display: inline-block;
+                    width: calc(~"100%/3");
+                    height:100%;
+                    font-size: 18px;
+                    text-align: center;
+                    margin: auto;
+                    padding: 70px 0;
+                    
+                    &.selected{
+                        font-size: 22px;
+                        color: @border-green-color;
+                        padding:58px 0;
+
+                        span{
+                            width: 199px;
+                            line-height: 63px;
+
+                            &::before{
+                                width: 23px;
+                                height: 68px;
+                                top: -6px;
+                                left: -11px;
+                            }
+
+                            &::after{
+                                width:  23px;
+                                height: 68px;
+                                right: -10px;
+                            }
+                        }
+                    }
+
+                    span{
+                        border: 1px solid @border-green-color;
+                        display: inline-block;
+                        width: 149px;
+                        line-height: 39px;
+                        position: relative;
+                        z-index: 10;
+                        background: @bg-login-color;
+
+                        &::before{
+                            content: "";
+                            display: inline-block;
+                            width: 14px;
+                            height: 42px;
+                            position: absolute;
+                            left: -7px;
+                            top: -4px;
+                            border-right: 1px solid @border-green-color;
+                            transform: rotate(20deg);
+                            background: @bg-login-color;
+                        }
+
+                        &::after{
+                            content: "";
+                            display: inline-block;
+                            width: 14px;
+                            height: 42px;
+                            position: absolute;
+                            right: -6px;
+                            top: 1px;
+                            border-left: 1px solid @border-green-color;
+                            transform: rotate(20deg);
+                            background: @bg-login-color;
+                        }
+                    }
+                }
+            }
+        }
     }
     
     &>.bottom{
         background: @bg-login-color;
+        min-height: calc(~"100% - 200px");
+
+        &>div{
+            padding: 70px;
+
+            .regist-form{
+                width: 40%;
+                margin: auto;
+
+                .control-label{
+                    font-size: 16px;
+                    font-weight: normal;
+                }
+                
+                input.form-control,
+                input.form-control:active,
+                input.form-control:focus,
+                select.form-control,
+                select.form-control:active,
+                select.form-control:focus,
+                button.dropdown-toggle,
+                button.dropdown-toggle:active,
+                button.dropdown-toggle:focus{
+                    background: transparent;
+                    color: #fff;
+                    border:1px solid @border-green-color;
+                }
+
+                select.form-control option{
+                    color: #000;
+                }
+
+                .btn-wrap{
+                    margin-top: 100px;
+
+                    .btn-green{
+                        width: 138px;
+                        -webkit-border-radius: 8px;
+                        -moz-border-radius: 8px;
+                        border-radius: 8px;
+                    }
+                }
+
+                .checkbox.col-md-10{
+                    font-size: 12px;
+
+                    .rulesBtn{
+                        color: @border-green-color;
+                    }
+                }
+            }
+        }
+
+        .register-panel{
+            background-color: transparent;
+            border: 1px solid rgba(51, 255, 255, 0.8);
+            box-shadow: 1px 1px 5px rgba(51,255,255, 0.6), 1px 1px 5px rgba(51,255,255, 0.6);
+            margin-bottom: 110px;
+            
+            .panel-title{
+                color: @border-green-color;
+                font-size: 18px;
+                font-weight: bold;
+                position: relative;
+
+                p{
+                    display: inline-block;
+                    margin: auto 10px;
+                    vertical-align: middle;
+                }
+
+                &.title-dot:before, &.title-dot:after{
+                    content: ' ';
+                    background-image: url("../images/icon-square-blue.png");
+                    background-repeat:no-repeat;
+                    display: inline-block;
+                    width: 14px;
+                    height: 9px;
+                    vertical-align: middle;
+                }
+
+                &.title-dot:after{
+                    transform: rotate(180deg);
+                    -ms-transform: rotate(180deg); /* IE 9 */
+                    -webkit-transform: rotate(180deg); /* Safari and Chrome */;
+                }
+            }
+            
+            .panel-body{
+                padding: 0;
+
+                .package-list{
+                    margin-bottom: 0;
+
+                    li{
+                        background: transparent;
+                        border:none;
+                        border-bottom: 1px solid rgba(51, 255, 255, 0.8);
+                        
+                        span.packageName{
+                            font-size: 16px;
+                            color: #00cccc;
+                        }
+
+                        &:last-child{
+                            border-bottom:none;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
