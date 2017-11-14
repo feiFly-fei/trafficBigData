@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>建设大屏展示</title>
     <link rel="stylesheet" href="../assets/bootstrap-3.3.7/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="../css/style.min.css">-->
-    <link rel="stylesheet/less" type="text/css" href="../css/style.less">
-    <script src="../assets/less/less.min.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <!--<link rel="stylesheet/less" type="text/css" href="../css/style.less">-->
+    <!--<script src="../assets/less/less.min.js"></script>-->
 </head>
 <body>
 <div class="wrapper constructBigScreen">
@@ -272,9 +273,12 @@
             <div class="col-md-3">
                 <div class="panel traffic-panel">
                     <div class="panel-heading row">
-                        <div class="panel-title title-dot col-md-9"><p>预警</p></div>
-                        <div class="col-md-3">
-
+                        <div class="panel-title title-dot col-md-6"><p>预警</p></div>
+                        <div class="col-md-6">
+                            <div class="input-append date traffic-datetime form_datetime" id="datetimepicker" data-date-format="yyyy-mm">
+                                <input size="7" type="text" readonly>
+                                <span class="add-on"><i class="icon-th"></i></span>
+                            </div>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -309,6 +313,8 @@
 <script src="../assets/jQuery/jquery.min.js"></script>
 <script src="../assets/echarts/echarts-all-3.js"></script>
 <script src="../assets/echarts/china.js"></script>
+<script src="../assets/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="../assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 <script src="../js/scroll.js"></script>
 <script src="../js/constructBigScreen.js"></script>
 </body>

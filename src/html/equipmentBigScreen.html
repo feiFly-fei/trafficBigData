@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>设备供应商大屏展示</title>
     <link rel="stylesheet" href="../assets/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../css/style.min.css">
     <!--<link rel="stylesheet/less" type="text/css" href="../css/style.less">-->
     <!--<script src="../assets/less/less.min.js"></script>-->
@@ -254,7 +255,15 @@
                         <div class="panel-title title-square"><i class="line"></i><p>预警</p></div>
                     </div>
                     <div class="panel-body">
-                        <div class="chart-h350" id="calendar_chart"></div>
+                       <div class="row">
+                           <div class="col-md-offset-6 col-md-6">
+                               <div class="input-append date traffic-datetime form_datetime" id="datetimepicker" data-date-format="yyyy-mm">
+                                   <input size="7" type="text" readonly>
+                                   <span class="add-on"><i class="icon-th"></i></span>
+                               </div>
+                           </div>
+                       </div>
+                        <div class="chart-h320" id="calendar_chart"></div>
                     </div>
                 </div>
             </div>
@@ -278,6 +287,8 @@
 <script src="../assets/jQuery/jquery.min.js"></script>
 <script src="../assets/echarts/echarts-all-3.js"></script>
 <script src="../assets/echarts/china.js"></script>
+<script src="../assets/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="../assets/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 <script src="../js/scroll.js"></script>
 <script src="../js/equipmentBigScreen.js"></script>
 </body>

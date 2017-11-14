@@ -481,14 +481,17 @@ $(function () {
             },
             monthLabel: {
                 margin: 5,
-                color: '#fff'
+                color: '#fff',
+                show: false
             },
             dayLabel:{
-                margin: 10,
-                color: '#fff'
+                margin: 15,
+                color: '#fff',
+                firstDay: 1,
+                nameMap: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
             },
-            cellSize: 36,
-            left: 40,
+            cellSize: 41,
+            left: 5,
             range: '2017-01',
             itemStyle: {
                 normal: {
@@ -644,7 +647,16 @@ $(function () {
     $('#timeline2').myScroll({
         speed: 40,
         rowHeight: 60
-    })
+    });
+
+    $("#datetimepicker").datetimepicker({
+        format: 'yyyy-mm',
+        autoclose: true,
+        startView: 'year',
+        minView:'year',
+        maxView:'decade',
+        language:  'zh-CN'
+    });
 });
 
 
