@@ -537,17 +537,30 @@ $(function () {
         xAxis: {
             type: 'category',
             boundaryGap: false,
+            axisLabel:{
+                color: '#fff'
+            },
             axisLine:{
                 lineStyle:{
-                    color:'#fff'
+                    color:'#064470',
+                    type: 'dashed'
                 }
             },
             data: ['2017-07-10','2017-07-20','2017-07-30','2017-08-10','2017-08-20','2017-08-30','2017-09-10']
         },
         yAxis: {
+            axisLabel:{
+                color: '#fff'
+            },
             axisLine:{
                 lineStyle:{
-                    color:'#fff'
+                    color:'#064470'
+                }
+            },
+            splitLine: {
+                lineStyle:{
+                    color: '#064470',
+                    type: 'dashed'
                 }
             },
             type: 'value'
