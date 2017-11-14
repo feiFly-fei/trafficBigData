@@ -1033,6 +1033,62 @@ a { text-decoration: none; }
         text-decoration: none;
         padding-right:0;
     }
+
+    .forgetPwdModal{
+
+        .modal-content{
+            background: @bg-login-color;
+
+            .modal-header{
+                border-bottom:1px solid @bg-login-color;
+
+                button.close{
+                    color: #fff;
+                }
+            }
+
+            .forgetPwdForm{
+                width: 85%;
+                margin: auto;
+
+                .form-control{
+                    border:1px solid #33ffff;
+                }
+
+                .submitBtn{
+                    width: 138px;
+                    -webkit-border-radius: 8px;
+                    -moz-border-radius: 8px;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}
+
+.remindModal{
+    .modal-content{
+        background: #0a0e1d;
+
+        .modal-body{
+            .info{
+                width: 200px;
+                margin: 30px auto;
+                font-size: 24px;
+                line-height: 50px;
+                padding-left: 75px;
+                background-image: url("../images/icon-success.png");
+                background-repeat: no-repeat;
+            }
+
+            .backInfo{
+                font-size: 16px;
+                color: @border-green-color;
+                width: 200px;
+                margin: 30px auto;
+            }
+        }
+    }
 }
 
 .btn-green,
