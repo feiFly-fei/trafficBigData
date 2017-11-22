@@ -214,7 +214,7 @@ $(function () {
         "ID": 160,
         "value": 3
     }];
-    
+
     var chinaOption = {
         geo: {
             map: 'china',
