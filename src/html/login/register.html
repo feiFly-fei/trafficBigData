@@ -5,6 +5,7 @@
     <title>登录注册</title>
     <link rel="stylesheet" href="../../assets/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/bootstrap-select/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../../assets/bootstrap-validator/dist/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="../../css/style.min.css">
     <!--<link rel="stylesheet/less" type="text/css" href="../../css/style.less">-->
     <!--<script src="../../assets/less/less.min.js"></script>-->
@@ -24,36 +25,36 @@
     </div>
     <div class="bottom">
         <div class="step-first-wrap">
-            <form class="regist-form form-horizontal">
+            <form class="regist-form form-horizontal" id="form_first">
                 <div class="form-group mrB30">
-                    <label for="name" class="col-md-3 control-label">姓名：</label>
+                    <label for="userName" class="col-md-3 control-label">姓名：</label>
                     <div class="col-md-9">
-                        <input type="text" id="name" class="form-control" placeholder="请输入账号">
+                        <input type="text" id="userName" name="userName" class="form-control" placeholder="请输入账号">
                     </div>
                 </div>
                 <div class="form-group mrB30">
                     <label for="companyName" class="col-md-3 control-label">公司名称：</label>
                     <div class="col-md-9">
-                        <input type="text" id="companyName" class="form-control" placeholder="请输入密码">
+                        <input type="text" id="companyName" name="companyName" class="form-control" placeholder="请输入公司名称">
                     </div>
                 </div>
                 <div class="form-group mrB30" id="distpicker">
                     <label class="col-md-3 control-label" for="province">所在地区：</label>
                     <div class="col-md-3">
-                        <select id="province" class="form-control"></select>
+                        <select id="province" name="province" class="form-control"></select>
                     </div>
                     <div class="col-md-3">
-                        <select id="city" class="form-control"></select>
+                        <select id="city" name="city" class="form-control"></select>
                     </div>
                     <div class="col-md-3">
-                        <select id="district" class="form-control"></select>
+                        <select id="district" name="district" class="form-control"></select>
                     </div>
                 </div>
                 <div class="form-group mrB30">
                     <label for="industry" class="col-md-3 control-label">所属行业：</label>
                    <div class="col-md-9">
-                       <select id="industry" class="selectpicker traffic-select">
-                           <option value="0">请选择</option>
+                       <select id="industry" name="industry" class="selectpicker traffic-select">
+                           <option value="">请选择</option>
                            <option value="1">金融行业1</option>
                            <option value="2">金融行业2</option>
                            <option value="3">金融行业3</option>
@@ -71,31 +72,33 @@
             </form>
         </div>
         <div class="step-second-wrap" style="display: none;">
-            <form class="regist-form form-horizontal">
+            <form class="regist-form form-horizontal" id="form_second">
                 <div class="form-group mrB30">
                     <label for="phoneNum" class="col-md-2 control-label">手机号：</label>
-                    <div class="col-md-10"><input type="text" class="form-control" id="phoneNum"></div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="phoneNum" name="phoneNum" placeholder="请输入手机号">
+                    </div>
                 </div>
                 <div class="form-group mrB30">
-                    <label for="" class="col-md-2 control-label">验证码：</label>
+                    <label for="validCode" class="col-md-2 control-label">验证码：</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control">
+                        <input type="number" class="form-control" id="validCode" name="validCode">
                     </div>
                     <div class="col-md-4">
                         <button class="btn btn-green">获取验证码</button>
                     </div>
                 </div>
                 <div class="form-group mrB30">
-                    <label for="" class="col-md-2 control-label">密码：</label>
+                    <label for="password" class="col-md-2 control-label">密码：</label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control">
+                        <input type="password" class="form-control" id="password" name="password">
                     </div>
                 </div>
                 <div class="form-group mrB30">
-                    <label for="" class="col-md-2">&nbsp;</label>
+                    <label for="agreeCheckbox" class="col-md-2">&nbsp;</label>
                     <div class="checkbox col-md-10">
                         <label>
-                            <input type="checkbox"> 再点击下一个按钮，表示您接受
+                            <input type="checkbox" id="agreeCheckbox" name="agreeCheckbox[]"> 再点击下一个按钮，表示您接受
                             <a href="javascript:;" class="rulesBtn">《慧数轨道交通大数据平台条款》</a> 和
                             <a href="javascript:;" class="rulesBtn">《用户须知》</a>
                         </label>
@@ -277,6 +280,7 @@
 <script src="../../assets/areaPicker/distpicker.data.js"></script>
 <script src="../../assets/areaPicker/distpicker.js"></script>
 <script src="../../assets/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="../../assets/bootstrap-validator/dist/js/bootstrapValidator.min.js"></script>
 <script src="../../js/login/register.js"></script>
 </body>
 </html>
