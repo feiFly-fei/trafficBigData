@@ -284,10 +284,9 @@ $(function () {
             },
             label: {
                 emphasis: {
-                    color: '#fff',
-                    verticalAlign: 'middle',
-                    align: 'center',
-                    position: 'inside'
+                    show: true,
+                    fontSize: 18,
+                    color: '#fff'
                 }
             }
         },
@@ -307,7 +306,7 @@ $(function () {
                     show: false
                 },
                 emphasis: {
-                    show: true,
+                    show: false,
                     areaColor: '#fff'
                 }
             },
@@ -320,7 +319,7 @@ $(function () {
             symbolRotate: 30,
             itemStyle: {
                 normal:{
-                    color: '#04fee4'
+                    color: '04fee4'
                 }
             },
             label: {
@@ -328,7 +327,7 @@ $(function () {
                     show: false
                 },
                 emphasis: {
-                    show: true,
+                    show: false,
                     areaColor: '#fff'
                 }
             },
@@ -471,6 +470,8 @@ $(function () {
 
 
     function getCalendarData() {
+        var date = new Date().format('yyyy-MM');
+        console.log(date)
         var data = getCalData();
         var data1 = [];
         for(var i = 0; i <　data.length; i++){
@@ -627,13 +628,13 @@ $(function () {
     links.pop();
 
     var calOpt  = {
-        // tooltip : {
-        //     trigger: 'item',
-        //     formatter: function (params) {
-        //         var data = params.data;
-        //         return data[0] + '，' + data[1];
-        //     }
-        // },
+        tooltip : {
+            trigger: 'item',
+            formatter: function (params) {
+                var data = params.data;
+                return data[0] + '，' + data[1];
+            }
+        },
         calendar:  {
             orient: 'vertical',
             yearLabel: {
@@ -674,7 +675,7 @@ $(function () {
             },
             label: {
                 normal: {
-                    show: true,
+                    show: false,
                     position: 'bottom',
                     fontSize: 10
                 }
@@ -829,7 +830,7 @@ $(function () {
         speed: 40,
         rowHeight: 60
     });
-
+    
     $("#datetimepicker").datetimepicker({
         format: 'yyyy-mm',
         autoclose: true,
@@ -837,6 +838,9 @@ $(function () {
         minView:'year',
         maxView:'decade',
         language:  'zh-CN'
+    }).on('changeDate', function (value) {
+        var newDate = new Date(value.date).format('yyyy-MM')
+        console.log(newDate)
     });
 });
 
