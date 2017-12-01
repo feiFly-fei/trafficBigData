@@ -319,7 +319,7 @@ $(function () {
             symbolRotate: 30,
             itemStyle: {
                 normal:{
-                    color: '04fee4'
+                    color: '#04fee4'
                 }
             },
             label: {
@@ -470,8 +470,7 @@ $(function () {
 
 
     function getCalendarData() {
-        var date = new Date().format('yyyy-MM');
-        console.log(date)
+        // var date = new Date().format('yyyy-MM');
         var data = getCalData();
         var data1 = [];
         for(var i = 0; i <　data.length; i++){
@@ -480,7 +479,7 @@ $(function () {
             arr.push(parseInt(data[i].num));
             data1.push(arr);
         }
-        console.log(data1);
+
         return data1;
     }
 
@@ -830,7 +829,7 @@ $(function () {
         speed: 40,
         rowHeight: 60
     });
-    
+
     $("#datetimepicker").datetimepicker({
         format: 'yyyy-mm',
         autoclose: true,
@@ -840,7 +839,7 @@ $(function () {
         language:  'zh-CN'
     }).on('changeDate', function (value) {
         var newDate = new Date(value.date).format('yyyy-MM')
-        console.log(newDate)
+        // console.log(newDate)
     });
 });
 
