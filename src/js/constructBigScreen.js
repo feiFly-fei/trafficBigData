@@ -271,7 +271,7 @@ $(function () {
         },
         geo: {
             map: 'china',
-            roam: true,
+            roam: false,
             itemStyle: {
                 normal: {
                     borderColor: '#13acf3',
@@ -470,6 +470,106 @@ $(function () {
 
 
 
+    function getCalendarData() {
+        var data = getCalData();
+        var data1 = [];
+        for(var i = 0; i <　data.length; i++){
+            var arr = [];
+            arr.push(data[i].date);
+            arr.push(parseInt(data[i].num));
+            data1.push(arr);
+        }
+        console.log(data1);
+        return data1;
+    }
+
+    function getCalData() {
+        var data = [ {
+            "num" : "135",
+            "date" : "2017-11-01"
+        }, {
+            "num" : "126",
+            "date" : "2017-11-02"
+        }, {
+            "num" : "133",
+            "date" : "2017-11-03"
+        }, {
+            "num" : "63",
+            "date" : "2017-11-04"
+        }, {
+            "num" : "43",
+            "date" : "2017-11-05"
+        }, {
+            "num" : "129",
+            "date" : "2017-11-06"
+        }, {
+            "num" : "147",
+            "date" : "2017-11-07"
+        }, {
+            "num" : "141",
+            "date" : "2017-11-08"
+        }, {
+            "num" : "158",
+            "date" : "2017-11-09"
+        }, {
+            "num" : "109",
+            "date" : "2017-11-10"
+        }, {
+            "num" : "53",
+            "date" : "2017-11-11"
+        }, {
+            "num" : "57",
+            "date" : "2017-11-12"
+        }, {
+            "num" : "140",
+            "date" : "2017-11-13"
+        }, {
+            "num" : "150",
+            "date" : "2017-11-14"
+        }, {
+            "num" : "142",
+            "date" : "2017-11-15"
+        }, {
+            "num" : "101",
+            "date" : "2017-11-16"
+        }, {
+            "num" : "120",
+            "date" : "2017-11-17"
+        }, {
+            "num" : "57",
+            "date" : "2017-11-18"
+        }, {
+            "num" : "50",
+            "date" : "2017-11-19"
+        }, {
+            "num" : "190",
+            "date" : "2017-11-20"
+        }, {
+            "num" : "137",
+            "date" : "2017-11-21"
+        }, {
+            "num" : "132",
+            "date" : "2017-11-22"
+        }, {
+            "num" : "144",
+            "date" : "2017-11-23"
+        }, {
+            "num" : "134",
+            "date" : "2017-11-24"
+        }, {
+            "num" : "39",
+            "date" : "2017-11-25"
+        }, {
+            "num" : "34",
+            "date" : "2017-11-26"
+        }, {
+            "num" : "2",
+            "date" : "2017-11-27"
+        } ];
+
+        return data;
+    }
+
 
     function getVirtulData(year) {
         year = year || '2017';
@@ -483,6 +583,7 @@ $(function () {
                 Math.floor(Math.random() * 1000)
             ]);
         }
+        console.log(data)
         return data;
     }
 
@@ -526,6 +627,13 @@ $(function () {
     links.pop();
 
     var calOpt  = {
+        // tooltip : {
+        //     trigger: 'item',
+        //     formatter: function (params) {
+        //         var data = params.data;
+        //         return data[0] + '，' + data[1];
+        //     }
+        // },
         calendar:  {
             orient: 'vertical',
             yearLabel: {
@@ -545,7 +653,7 @@ $(function () {
             },
             cellSize: 41,
             left: 'center',
-            range: '2017-01',
+            range: '2017-11',
             itemStyle: {
                 normal: {
                     color: '#0a0e1d'
@@ -556,19 +664,26 @@ $(function () {
             type: 'effectScatter',
             coordinateSystem: 'calendar',
             symbolSize: function (val) {
-                return val[1] / 50;
+                return val[1] / 18;
             },
-            data: getVirtulData(2017),
+            data: getCalendarData(),
             itemStyle: {
                 normal: {
                     color: '#ff9900'
                 }
+            },
+            label: {
+                normal: {
+                    show: true,
+                    position: 'bottom',
+                    fontSize: 10
+                }
             }
         }]
     };
+    getVirtulData('2017')
     var calChart = echarts.init(document.getElementById('calendar_chart'));
     calChart.setOption(calOpt);
-
 
     var trendOpt = {
         tooltip: {
