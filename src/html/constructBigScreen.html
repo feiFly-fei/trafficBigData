@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>建设大屏展示</title>
     <link rel="stylesheet" href="../assets/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
@@ -294,8 +295,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel traffic-panel">
-                    <div class="panel-heading">
-                        <div class="panel-title title-dot"><p>数据趋势</p></div>
+                    <div class="panel-heading clearfix">
+                        <div class="panel-title title-dot pull-left"><p>数据趋势</p></div>
+                        <div class="btn-group pull-right btn-group-blue" role="group" aria-label="...">
+                            <button type="button" class="btn btn-defaul active">对象趋势图</button>
+                            <button type="button" class="btn btn-default">维度趋势图</button>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <div class="chart-h420" id="data_trend"></div>

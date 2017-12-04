@@ -316,7 +316,7 @@ $(function () {
             coordinateSystem: 'geo',
             symbolSize: 25,
             symbol: '',
-            symbolRotate: 30,
+            symbolRotate: 35,
             itemStyle: {
                 normal:{
                     color: '#04fee4'
@@ -333,86 +333,171 @@ $(function () {
             },
             data: convertData(data.sort(function (a, b) {
                 return b.value - a.value;
-            }).slice(0, 6)),
+            }).slice(0, 6))
         }]
     };
-
+console.log( convertData(data.sort(function (a, b) {
+    return b.value - a.value;
+}).slice(0, 6)))
+    console.log(convertData(data))
     var map = echarts.init(document.getElementById('chart_china_map'));
     map.setOption(chinaOption);
 
 
+    // var indexOpt = {
+    //     tooltip : {
+    //         trigger: 'axis',
+    //         axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+    //             type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+    //         }
+    //     },
+    //     grid: {
+    //         left: '3%',
+    //         right: '5%',
+    //         bottom: '3%',
+    //         containLabel: true
+    //     },
+    //     xAxis:  {
+    //         type: 'value',
+    //         axisLine: {
+    //             lineStyle: {
+    //                 color: '#fff'
+    //             }
+    //         },
+    //         splitLine:{show: false}//去掉网格线
+    //     },
+    //     yAxis: {
+    //         type: 'category',
+    //         data: ['太原××公司','北京××公司','上海××公司','南宁××公司','武汉××公司','大连××公司'],
+    //         axisLine: {
+    //             lineStyle: {
+    //                 color: '#fff'
+    //             }
+    //         },
+    //         splitLine:{show: false}//去掉网格线
+    //     },
+    //     series: [
+    //         {
+    //             name: '优秀',
+    //             type: 'bar',
+    //             stack: '总量',
+    //             label: {
+    //                 normal: {
+    //                     show: true,
+    //                     position: 'insideRight'
+    //                 }
+    //             },
+    //             data: [],
+    //             itemStyle: {
+    //                 normal: {
+    //                     color: '#55e4f9'
+    //                 }
+    //             }
+    //         },
+    //         {
+    //             name: '差评',
+    //             type: 'bar',
+    //             stack: '总量',
+    //             label: {
+    //                 normal: {
+    //                     show: true,
+    //                     position: 'insideRight'
+    //                 }
+    //             },
+    //             data: [],
+    //             itemStyle: {
+    //                 normal: {
+    //                     color: '#047aff'
+    //                 }
+    //             }
+    //         }
+    //     ]
+    // };
+
+
     var indexOpt = {
         tooltip : {
-            trigger: 'axis',
-            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            trigger : 'axis',
+            axisPointer : { // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow' // 默认为直线，可选为：'line' | 'shadow'
             }
         },
-        grid: {
-            left: '3%',
-            right: '5%',
-            bottom: '3%',
-            containLabel: true
+        grid : {
+            left : '3%',
+            right : '5%',
+            bottom : '3%',
+            containLabel : true
         },
-        xAxis:  {
-            type: 'value',
-            axisLine: {
-                lineStyle: {
-                    color: '#fff'
+        xAxis : {
+            type : 'value',
+            axisLine : {
+                lineStyle : {
+                    color : '#fff'
                 }
             },
-            splitLine:{show: false}//去掉网格线
+            splitLine : {
+                show : false
+            }
+            // 去掉网格线
         },
-        yAxis: {
-            type: 'category',
-            data: ['太原××公司','北京××公司','上海××公司','南宁××公司','武汉××公司','大连××公司'],
-            axisLine: {
-                lineStyle: {
-                    color: '#fff'
+        yAxis : {
+            type : 'category',
+            // data : [],
+            axisLine : {
+                lineStyle : {
+                    color : '#fff'
                 }
             },
-            splitLine:{show: false}//去掉网格线
+            splitLine : {
+                show : false
+            },// 去掉网格线
+            triggerEvent : true, // Y柱点击事件
         },
-        series: [
-            {
-                name: '优秀',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        show: true,
-                        position: 'insideRight'
-                    }
-                },
-                data: [750, 812, 601, 954, 990, 1000],
-                itemStyle: {
-                    normal: {
-                        color: '#55e4f9'
-                    }
+        series : [ {
+            name : '优秀',
+            type : 'bar',
+            stack : '总量',
+            label : {
+                normal : {
+                    show : true,
+                    position : 'insideRight'
                 }
             },
-            {
-                name: '差评',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        show: true,
-                        position: 'insideRight'
-                    }
-                },
-                data: [220, 232, 191, 174, 220, 160],
-                itemStyle: {
-                    normal: {
-                        color: '#047aff'
-                    }
+            data : [],
+            itemStyle : {
+                normal : {
+                    color : '#55e4f9'
                 }
             }
-        ]
+        }, {
+            name : '差评',
+            type : 'bar',
+            stack : '总量',
+            label : {
+                normal : {
+                    show : true,
+                    position : 'insideRight'
+                }
+            },
+            data : [],
+            itemStyle : {
+                normal : {
+                    color : '#047aff'
+                }
+            }
+        } ]
     };
-
     var indexChart = echarts.init(document.getElementById('supply_index'));
     indexChart.setOption(indexOpt);
+    indexChart.showLoading('default', {
+        text: '暂无数据',
+        textStyle: {
+          fontSize: 18
+        },
+        maskColor: 'rgba(2,14,31,0.8)',
+        textColor: '#fff',
+        effect: 'whirling'
+    });
 
 
     var dataOpt ={
@@ -583,7 +668,6 @@ $(function () {
                 Math.floor(Math.random() * 1000)
             ]);
         }
-        console.log(data)
         return data;
     }
 
