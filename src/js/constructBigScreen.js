@@ -336,10 +336,7 @@ $(function () {
             }).slice(0, 6))
         }]
     };
-console.log( convertData(data.sort(function (a, b) {
-    return b.value - a.value;
-}).slice(0, 6)))
-    console.log(convertData(data))
+
     var map = echarts.init(document.getElementById('chart_china_map'));
     map.setOption(chinaOption);
 
@@ -413,8 +410,6 @@ console.log( convertData(data.sort(function (a, b) {
     //         }
     //     ]
     // };
-
-
     var indexOpt = {
         tooltip : {
             trigger : 'axis',
@@ -442,7 +437,7 @@ console.log( convertData(data.sort(function (a, b) {
         },
         yAxis : {
             type : 'category',
-            // data : [],
+            data : ['企业A','企业B'],
             axisLine : {
                 lineStyle : {
                     color : '#fff'
@@ -463,7 +458,7 @@ console.log( convertData(data.sort(function (a, b) {
                     position : 'insideRight'
                 }
             },
-            data : [],
+            data : [10,12],
             itemStyle : {
                 normal : {
                     color : '#55e4f9'
@@ -479,7 +474,7 @@ console.log( convertData(data.sort(function (a, b) {
                     position : 'insideRight'
                 }
             },
-            data : [],
+            data : [2,3],
             itemStyle : {
                 normal : {
                     color : '#047aff'
@@ -487,17 +482,9 @@ console.log( convertData(data.sort(function (a, b) {
             }
         } ]
     };
+
     var indexChart = echarts.init(document.getElementById('supply_index'));
     indexChart.setOption(indexOpt);
-    indexChart.showLoading('default', {
-        text: '暂无数据',
-        textStyle: {
-          fontSize: 18
-        },
-        maskColor: 'rgba(2,14,31,0.8)',
-        textColor: '#fff',
-        effect: 'whirling'
-    });
 
 
     var dataOpt ={
