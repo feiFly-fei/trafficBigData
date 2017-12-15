@@ -84,16 +84,28 @@ a { text-decoration: none; }
     .logo-box{
         position: absolute;
         top: 38px;
-        right: 15px;
+        right: 30px;
 
-        &>a,
-        &>a:hover{
+        &>a.icon1,
+        &>a.icon1:hover{
             font-size: 18px;
             color: #ccc;
             text-decoration: none;
             display: inline-block;
             padding-left: 25px;
             background-image: url("../images/icon-center.png");
+            background-repeat:no-repeat;
+            margin-right: 15px;
+        }
+
+        &>a.icon2,
+        &>a.icon2:hover{
+            font-size: 18px;
+            color: #ccc;
+            text-decoration: none;
+            display: inline-block;
+            padding-left: 25px;
+            background-image: url("../images/icon-logout.png");
             background-repeat:no-repeat;
         }
     }
@@ -116,6 +128,9 @@ a { text-decoration: none; }
         border-color: @border-blue-color;
         position: relative;
         margin-bottom: 47px;
+        -webkit-box-shadow: 0 0 10px @border-blue-color,0 0 10px @border-blue-color;
+        -moz-box-shadow: 0 0 10px @border-blue-color,0 0 10px @border-blue-color;
+        box-shadow: 0 0 10px @border-blue-color,0 0 10px @border-blue-color;
 
         .panel-heading{
             background-color: transparent;
@@ -187,6 +202,16 @@ a { text-decoration: none; }
                 background: @bg-body-color;
                 .border-radius-half;
             }
+
+            .swiper-button-prev,
+            .swiper-button-next{
+                display: none;
+            }
+
+            &:hover .swiper-button-prev,
+            &:hover .swiper-button-next{
+                display: block;
+            }
         }
 
         .text-blue{
@@ -226,7 +251,7 @@ a { text-decoration: none; }
                 content: '';
                 display: block;
                 position: absolute;
-                right: 0;
+                right: 1px;
                 top:0;
                 border-right: 1px solid #03ddfd;
                 border-top: 1px solid #03ddfd;
@@ -261,7 +286,7 @@ a { text-decoration: none; }
             .right-bottom-border{
                 display: block;
                 position: absolute;
-                right:0;
+                right:1px;
                 bottom:0;
                 border-right: 1px solid #03ddfd;
                 border-bottom: 1px solid #03ddfd;
@@ -332,6 +357,10 @@ a { text-decoration: none; }
 
         &.noBorder{
             border: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+
             &:before{
                 display: none;
             }
@@ -504,8 +533,8 @@ a { text-decoration: none; }
             background: #0b82ce;
             color: #0b82ce;
             position: absolute;
-            top: 150px;
-            right: -3px;
+            top: 75%;
+            right: -2px;
 
             &:before{
                 content: '';
@@ -528,7 +557,7 @@ a { text-decoration: none; }
                 color: #0b82ce;
                 position: absolute;
                 top: 30px;
-                left: 1px;
+                left: 2px;
             }
         }
 
@@ -1152,18 +1181,14 @@ a { text-decoration: none; }
                         width: 25px;
                         height: 25px;
                         position: absolute;
-                        left: 33%;
+                        left: 50%;
                         top: -13px;
-                    }
-
-                    &:after{
-                        left: 66%;
                     }
                 }
 
                 .step-li{
                     display: inline-block;
-                    width: calc(~"100%/3");
+                    width: calc(~"100%/2");
                     height:100%;
                     font-size: 18px;
                     text-align: center;
@@ -1352,6 +1377,32 @@ a { text-decoration: none; }
                     }
                 }
             }
+        }
+    }
+    
+    .register-modal{
+
+        .modal-content{
+            background: #000;
+            color: #fff;
+            border: 1px solid @border-blue-color;
+            -webkit-box-shadow: 0 0 10px @border-blue-color,0 0 10px @border-blue-color;
+            -moz-box-shadow: 0 0 10px @border-blue-color,0 0 10px @border-blue-color;
+            box-shadow: 0 0 10px @border-blue-color,0 0 10px @border-blue-color;
+            
+            .modal-header{
+                .close{
+                    color: #fff;
+                }
+            }
+        }
+
+        .content{
+            height: 520px;
+            padding: 10px 20px;
+            overflow-y: auto;
+            font-size: 14px;
+            line-height: 2em;
         }
     }
 }

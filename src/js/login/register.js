@@ -127,4 +127,8 @@ $(function () {
             $('.step-second-wrap').hide().next('.step-third-wrap').show();
         });
     });
+
+    $('.rulesBtn').on('click', function () {
+        $('#myModal').modal('toggle');
+    });
 });

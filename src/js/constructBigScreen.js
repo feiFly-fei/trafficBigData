@@ -341,146 +341,74 @@ $(function () {
     map.setOption(chinaOption);
 
 
-    // var indexOpt = {
-    //     tooltip : {
-    //         trigger: 'axis',
-    //         axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-    //             type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-    //         }
-    //     },
-    //     grid: {
-    //         left: '3%',
-    //         right: '5%',
-    //         bottom: '3%',
-    //         containLabel: true
-    //     },
-    //     xAxis:  {
-    //         type: 'value',
-    //         axisLine: {
-    //             lineStyle: {
-    //                 color: '#fff'
-    //             }
-    //         },
-    //         splitLine:{show: false}//去掉网格线
-    //     },
-    //     yAxis: {
-    //         type: 'category',
-    //         data: ['太原××公司','北京××公司','上海××公司','南宁××公司','武汉××公司','大连××公司'],
-    //         axisLine: {
-    //             lineStyle: {
-    //                 color: '#fff'
-    //             }
-    //         },
-    //         splitLine:{show: false}//去掉网格线
-    //     },
-    //     series: [
-    //         {
-    //             name: '优秀',
-    //             type: 'bar',
-    //             stack: '总量',
-    //             label: {
-    //                 normal: {
-    //                     show: true,
-    //                     position: 'insideRight'
-    //                 }
-    //             },
-    //             data: [],
-    //             itemStyle: {
-    //                 normal: {
-    //                     color: '#55e4f9'
-    //                 }
-    //             }
-    //         },
-    //         {
-    //             name: '差评',
-    //             type: 'bar',
-    //             stack: '总量',
-    //             label: {
-    //                 normal: {
-    //                     show: true,
-    //                     position: 'insideRight'
-    //                 }
-    //             },
-    //             data: [],
-    //             itemStyle: {
-    //                 normal: {
-    //                     color: '#047aff'
-    //                 }
-    //             }
-    //         }
-    //     ]
-    // };
     var indexOpt = {
         tooltip : {
-            trigger : 'axis',
-            axisPointer : { // 坐标轴指示器，坐标轴触发有效
-                type : 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
             }
         },
-        grid : {
-            left : '3%',
-            right : '5%',
-            bottom : '3%',
-            containLabel : true
+        grid: {
+            left: '3%',
+            right: '5%',
+            bottom: '3%',
+            containLabel: true
         },
-        xAxis : {
-            type : 'value',
-            axisLine : {
-                lineStyle : {
-                    color : '#fff'
+        xAxis:  {
+            type: 'value',
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
                 }
             },
-            splitLine : {
-                show : false
-            }
-            // 去掉网格线
+            splitLine:{show: false}//去掉网格线
         },
-        yAxis : {
-            type : 'category',
-            data : ['企业A','企业B'],
-            axisLine : {
-                lineStyle : {
-                    color : '#fff'
+        yAxis: {
+            type: 'category',
+            data: ['太原××公司','北京××公司','上海××公司','南宁××公司','武汉××公司','大连××公司'],
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
                 }
             },
-            splitLine : {
-                show : false
-            },// 去掉网格线
-            triggerEvent : true, // Y柱点击事件
+            splitLine:{show: false}//去掉网格线
         },
-        series : [ {
-            name : '优秀',
-            type : 'bar',
-            stack : '总量',
-            label : {
-                normal : {
-                    show : true,
-                    position : 'insideRight'
+        series: [
+            {
+                name: '优秀',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideRight'
+                    }
+                },
+                data: [121,98,180,201,165,109],
+                itemStyle: {
+                    normal: {
+                        color: '#55e4f9'
+                    }
                 }
             },
-            data : [10,12],
-            itemStyle : {
-                normal : {
-                    color : '#55e4f9'
-                }
-            }
-        }, {
-            name : '差评',
-            type : 'bar',
-            stack : '总量',
-            label : {
-                normal : {
-                    show : true,
-                    position : 'insideRight'
-                }
-            },
-            data : [2,3],
-            itemStyle : {
-                normal : {
-                    color : '#047aff'
+            {
+                name: '差评',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideRight'
+                    }
+                },
+                data: [23,12,19,{value: 0, label: {normal: {show: false}}},{value: 0, label: {normal: {show: false}}},10],
+                itemStyle: {
+                    normal: {
+                        color: '#047aff'
+                    }
                 }
             }
-        } ]
+        ]
     };
 
     var indexChart = echarts.init(document.getElementById('supply_index'));
@@ -563,7 +491,7 @@ $(function () {
             "num" : "126",
             "date" : "2017-11-02"
         }, {
-            "num" : "133",
+            "num" : "1133",
             "date" : "2017-11-03"
         }, {
             "num" : "63",
@@ -575,10 +503,10 @@ $(function () {
             "num" : "129",
             "date" : "2017-11-06"
         }, {
-            "num" : "147",
+            "num" : "4147",
             "date" : "2017-11-07"
         }, {
-            "num" : "141",
+            "num" : "2141",
             "date" : "2017-11-08"
         }, {
             "num" : "158",
@@ -637,7 +565,16 @@ $(function () {
         }, {
             "num" : "2",
             "date" : "2017-11-27"
-        } ];
+        }, {
+            "num" : "0",
+            "date" : "2017-11-28"
+        }, {
+            "num" : "1",
+            "date" : "2017-11-29"
+        }, {
+            "num" : "0",
+            "date" : "2017-11-30"
+        }];
 
         return data;
     }
@@ -697,6 +634,7 @@ $(function () {
     });
     links.pop();
 
+    var cellSize = [41,41];
     var calOpt  = {
         tooltip : {
             trigger: 'item',
@@ -712,22 +650,22 @@ $(function () {
                 color: '#fff'
             },
             monthLabel: {
-                show: false,
-                margin: 5,
-                color: '#fff'
+                show: false
             },
             dayLabel:{
                 margin: 15,
                 color: '#fff',
                 firstDay: 1,
-                nameMap: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+                nameMap: ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
             },
-            cellSize: 41,
+            cellSize: cellSize,
             left: 'center',
             range: '2017-11',
             itemStyle: {
                 normal: {
-                    color: '#0a0e1d'
+                    color: '#0a0e1d',
+                    borderWidth: 1,
+                    borderColor: '#3385ff'
                 }
             }
         },
@@ -735,7 +673,11 @@ $(function () {
             type: 'effectScatter',
             coordinateSystem: 'calendar',
             symbolSize: function (val) {
-                return val[1] / 18;
+                if(val[1]/18 >= 41){
+                    return 41/1.5;
+                }else{
+                    return val[1] / 18;
+                }
             },
             data: getCalendarData(),
             itemStyle: {
@@ -743,16 +685,25 @@ $(function () {
                     color: '#ff9900'
                 }
             },
+            rippleEffect:{
+                scale: 1.5
+            },
             label: {
                 normal: {
-                    show: false,
-                    position: 'bottom',
-                    fontSize: 10
+                    show: true,
+                    formatter: function (params) {
+                        return echarts.format.formatTime('dd', params.value[0]);
+                    },
+                    offset: [-cellSize[0] / 2 + 10, -cellSize[1] / 2 + 10],
+                    textStyle: {
+                        color: '#fff',
+                        fontSize: 12
+                    }
                 }
             }
         }]
     };
-    getVirtulData('2017')
+
     var calChart = echarts.init(document.getElementById('calendar_chart'));
     calChart.setOption(calOpt);
 
@@ -912,6 +863,20 @@ $(function () {
         var newDate = new Date(value.date).format('yyyy-MM')
         // console.log(newDate)
     });
+
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop: true,
+        autoplay:{
+            delay: 2000,
+            disableOnInteraction: false
+        },
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            hiddenClass: 'my-button-hidden'
+        }
+    })
 });
 
 
