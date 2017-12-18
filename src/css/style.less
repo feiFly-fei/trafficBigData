@@ -914,98 +914,6 @@ a { text-decoration: none; }
     color: #fff;
 }
 
-@keyframes clipMe {
-    0%{
-        left: 40px;
-        top: -3px;
-    }
-    25%{
-        top: -3px;
-        left: 25%;
-    }
-    50%{
-        top: -3px;
-        left: 50%;
-    }
-    75%{
-        top: -3px;
-        left: 75%;
-    }
-    100%{
-        left: calc(~"100% - 50px");
-        top: -3px;
-    }
-}
-
-@-webkit-keyframes clipMe {
-    0%{
-        left: 40px;
-        top: -3px;
-    }
-    25%{
-        top: -3px;
-        left: 25%;
-    }
-    50%{
-        top: -3px;
-        left: 50%;
-    }
-    75%{
-        top: -3px;
-        left: 75%;
-    }
-    100%{
-        left: calc(~"100% - 50px");
-        top: -3px;
-    }
-}
-
-@keyframes clipMe1 {
-    0%{
-        right: -2px;
-        top: 40px;
-    }
-    25%{
-        right: -2px;
-        top: 25%;
-    }
-    50%{
-        right: -2px;
-        top: 50%;
-    }
-    75%{
-        right: -2px;
-        top: 75%;
-    }
-    100%{
-        top: calc(~"100% - 50px");
-        right: -2px;
-    }
-}
-
-@-webkit-keyframes clipMe1 {
-    0%{
-        right: -2px;
-        top: 40px;
-    }
-    25%{
-        right: -2px;
-        top: 25%;
-    }
-    50%{
-        right: -2px;
-        top: 50%;
-    }
-    75%{
-        right: -2px;
-        top: 75%;
-    }
-    100%{
-        top: calc(~"100% - 50px");
-        right: -2px;
-    }
-}
-
 @bg-login-color: #121a27;
 
 .login{
@@ -1273,6 +1181,7 @@ a { text-decoration: none; }
                 .control-label{
                     font-size: 16px;
                     font-weight: normal;
+                    color: #fff;
                 }
                 
                 input.form-control,
@@ -1284,13 +1193,14 @@ a { text-decoration: none; }
                 button.dropdown-toggle,
                 button.dropdown-toggle:active,
                 button.dropdown-toggle:focus{
-                    background: transparent;
-                    color: #fff;
-                    border:1px solid @border-green-color;
+                    background: transparent !important;
+                    color: #fff !important;
+                    border:1px solid @border-green-color !important;
                 }
 
                 select.form-control option{
-                    color: #000;
+                    color: #fff;
+                    background: @bg-login-color;
                 }
 
                 .btn-wrap{
@@ -1315,6 +1225,28 @@ a { text-decoration: none; }
                 .has-success{
                     label{
                         color: #fff;
+                    }
+                }
+
+                .traffic-select{
+                    &.bootstrap-select{
+                        .dropdown-menu{
+                            &.open{
+                                background: @bg-login-color;
+
+                                .inner{
+                                    background: @bg-login-color;
+
+                                    a{
+                                        color: #fff;
+                                        
+                                        &:hover,&:focus{
+                                            background: #3385ff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
