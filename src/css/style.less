@@ -307,6 +307,39 @@ a { text-decoration: none; }
             tbody tr td{
                 border-top: none;
             }
+
+            &.overflow-table{
+                tbody{
+                    tr{
+
+                        td:nth-child(2){
+                            div{
+                                width: 100px;
+                            }
+                        }
+
+                        td:nth-child(3){
+                            div{
+                                width: 80px;
+                            }
+                        }
+
+                        @media screen and (max-width: 1420px){
+                            td:nth-child(2){
+                                div{
+                                    width: 90px;
+                                }
+                            }
+
+                            td:nth-child(3){
+                                div{
+                                    width: 58px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         &:before{

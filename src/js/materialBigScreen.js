@@ -26,9 +26,13 @@ $(function () {
                 axisTick: {
                     alignWithLabel: true
                 },
-                axisLine: {
-                    lineStyle: {
-                        color: '#fff'
+                axisLabel:{
+                    color: '#fff'
+                },
+                axisLine:{
+                    lineStyle:{
+                        color:'#064470',
+                        type: 'dashed'
                     }
                 },
                 splitLine:{show: false}//去掉网格线
@@ -37,12 +41,15 @@ $(function () {
         yAxis : [
             {
                 type : 'value',
+                splitLine:{show: false},//去掉网格线
                 axisLine: {
                     lineStyle: {
-                        color: '#fff'
+                        color:'#064470'
                     }
                 },
-                splitLine:{show: false}//去掉网格线
+                axisLabel:{
+                    color: '#fff'
+                }
             }
         ],
         series : [
@@ -50,7 +57,7 @@ $(function () {
                 name:'',
                 type:'bar',
                 barWidth: '60%',
-                data:[10, 52, 200, 334, 390, 330, 220]
+                data:[110, 352, 800, 1334, 790, 1330, 920]
             }
         ]
     };
@@ -306,7 +313,8 @@ $(function () {
             type: 'value',
             axisLine: {
                 lineStyle: {
-                    color: '#fff'
+                    color: '#fff',
+                    type: 'dashed'
                 }
             },
             splitLine:{show: false}//去掉网格线
@@ -316,7 +324,8 @@ $(function () {
             data: ['太原××公司','北京××公司','上海××公司','南宁××公司','武汉××公司','大连××公司'],
             axisLine: {
                 lineStyle: {
-                    color: '#fff'
+                    color: '#fff',
+                    type: 'dashed'
                 }
             },
             splitLine:{show: false}//去掉网格线
@@ -655,7 +664,19 @@ $(function () {
 
     var developOpt = {
         legend: {
-            data:['本产业','新型产业','竞争业']
+            data:['本产业','新型产业','竞争业'],
+            textStyle:{
+                color: '#fff'
+            }
+        },
+        grid:{
+          x: 40
+        },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
         },
         xAxis: [
             {
@@ -664,9 +685,13 @@ $(function () {
                 axisPointer: {
                     type: 'shadow'
                 },
-                axisLine: {
-                    lineStyle: {
-                        color: '#fff'
+                axisLabel:{
+                    color: '#fff'
+                },
+                axisLine:{
+                    lineStyle:{
+                        color:'#064470',
+                        type: 'dashed'
                     }
                 }
             }
@@ -676,7 +701,16 @@ $(function () {
                 type: 'value',
                 axisLine: {
                     lineStyle: {
-                        color: '#fff'
+                        color:'#064470'
+                    }
+                },
+                axisLabel:{
+                    color: '#fff'
+                },
+                splitLine: {
+                    lineStyle:{
+                        color: '#064470',
+                        type: 'dashed'
                     }
                 }
             },
@@ -684,7 +718,16 @@ $(function () {
                 type: 'value',
                 axisLine: {
                     lineStyle: {
-                        color: '#fff'
+                        color:'#064470'
+                    }
+                },
+                axisLabel:{
+                    color: '#fff'
+                },
+                splitLine: {
+                    lineStyle:{
+                        color: '#064470',
+                        type: 'dashed'
                     }
                 }
             }
@@ -693,7 +736,7 @@ $(function () {
             {
                 name:'本产业',
                 type:'bar',
-                data:[ 76.7, 135.6, 162.2, 32.6, 20.0, 6.4],
+                data:[ 376.7, 535.6, 862.2, 1032.6, 620.0, 896.4],
                 itemStyle:{
                     normal:{
                         color: '#00d8ff'
@@ -703,7 +746,7 @@ $(function () {
             {
                 name:'新型产业',
                 type:'bar',
-                data:[ 70.7, 175.6, 182.2, 48.7, 18.8, 6.0],
+                data:[ 270.7, 475.6, 782.2, 848.7, 918.8, 836.0],
                 itemStyle:{
                     normal:{
                         color: '#6666ff'
@@ -714,7 +757,7 @@ $(function () {
                 name:'竞争业',
                 type:'line',
                 smooth:true,
-                data:[ 60.2, 75.3, 83.4, 103.0, 86.5, 72.0],
+                data:[ 260.2, 375.3, 683.4, 703.0, 886.5, 772.0],
                 itemStyle:{
                     normal:{
                         color: '#ffcc00'
